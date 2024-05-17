@@ -37,7 +37,8 @@ public class dashboard extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         scrollPanePanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        mediaTab1 = new realestate.mediaTab();
+        genInformationTab2 = new realestate.GenInformationTab();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -124,35 +125,43 @@ public class dashboard extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)))
                 .addComponent(jLabel2)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
+
+        jLabel3.getAccessibleContext().setAccessibleName("");
+        jLabel6.getAccessibleContext().setAccessibleName("");
+        jLabel7.getAccessibleContext().setAccessibleName("");
+        jButton1.getAccessibleContext().setAccessibleName("");
+        jButton2.getAccessibleContext().setAccessibleName("");
 
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(861, 300));
 
-        genTab();
         scrollPanePanel.setBackground(new java.awt.Color(255, 204, 153));
-
-        jLabel4.setText("jLabel4");
 
         javax.swing.GroupLayout scrollPanePanelLayout = new javax.swing.GroupLayout(scrollPanePanel);
         scrollPanePanel.setLayout(scrollPanePanelLayout);
         scrollPanePanelLayout.setHorizontalGroup(
-            scrollPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            scrollPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(scrollPanePanelLayout.createSequentialGroup()
-                .addGap(266, 266, 266)
-                .addComponent(jLabel4)
-                .addContainerGap(556, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(scrollPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mediaTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genInformationTab2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         scrollPanePanelLayout.setVerticalGroup(
             scrollPanePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scrollPanePanelLayout.createSequentialGroup()
-                .addGap(297, 297, 297)
-                .addComponent(jLabel4)
-                .addContainerGap(4672, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1045, 1045, 1045)
+                .addComponent(mediaTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2394, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(scrollPanePanel);
+        scrollPanePanel.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,16 +170,19 @@ public class dashboard extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 861, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel2.getAccessibleContext().setAccessibleName("");
+        jScrollPane1.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,6 +200,8 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(jPanel1, 808, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,17 +250,18 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private realestate.GenInformationTab genInformationTab2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane1;
+    private realestate.mediaTab mediaTab1;
     public javax.swing.JPanel scrollPanePanel;
     // End of variables declaration//GEN-END:variables
 }
