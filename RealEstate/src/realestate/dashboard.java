@@ -4,18 +4,23 @@
  */
 package realestate;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author User
  */
 public class dashboard extends javax.swing.JFrame {
-    public GenInformationTab genTab = new GenInformationTab();
     /**
      * Creates new form dashboard
      */
     public dashboard() {
         initComponents();
     }
+    
+    public String title;
+    public String description;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,6 +50,8 @@ public class dashboard extends javax.swing.JFrame {
         locationTab1 = new realestate.LocationTab();
         genInformationTab2 = new realestate.GenInformationTab();
         keyInformationTab2 = new realestate.KeyInformationTab();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -210,6 +217,20 @@ public class dashboard extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel6);
 
+        jButton3.setText("Publish");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Cancel");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout listPropertyPanelLayout = new javax.swing.GroupLayout(listPropertyPanel);
         listPropertyPanel.setLayout(listPropertyPanelLayout);
         listPropertyPanelLayout.setHorizontalGroup(
@@ -223,15 +244,25 @@ public class dashboard extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listPropertyPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))))
+            .addGroup(listPropertyPanelLayout.createSequentialGroup()
+                .addGap(176, 176, 176)
+                .addComponent(jButton3)
+                .addGap(50, 50, 50)
+                .addComponent(jButton5)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         listPropertyPanelLayout.setVerticalGroup(
             listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listPropertyPanelLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel4)
-                .addGap(59, 59, 59)
+                .addGap(18, 18, 18)
+                .addGroup(listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(jButton5))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab2", listPropertyPanel);
@@ -298,6 +329,61 @@ public class dashboard extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        title = genInformationTab2.getTitle();
+        description = genInformationTab2.getDescription();
+        
+        try {
+            createNewPropertyFile();
+        } catch (IOException ex) {
+            
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    
+    public String createRandomFileName() {
+        
+        int number = (int) ((Math.random() * (1001 - 1)) + 1);
+        
+        String fileName = "property"+number+".txt";
+        
+        return fileName;  
+    }
+    
+    
+    public void createNewPropertyFile() throws IOException {
+        
+        FileWriter fileWriter = new FileWriter(createRandomFileName());
+        
+        if(genInformationTab2.isSellOpaque){
+            fileWriter.write("Sell");
+        }
+        if(genInformationTab2.isRentOpaque){
+            fileWriter.write("Rent");
+        }
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(genInformationTab2.propertyType);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(title);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(description);
+        
+        fileWriter.close();
+        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -332,12 +418,15 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private realestate.GenInformationTab genInformationTab2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

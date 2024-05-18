@@ -4,18 +4,29 @@
  */
 package realestate;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 /**
  *
  * @author User
  */
-public class GenInformationTab extends javax.swing.JPanel {
-
+public class GenInformationTab extends javax.swing.JPanel implements MouseListener {
+    public String title;
+    public String description;
+    public String propertyType;
+    
+    public boolean isSellOpaque;
+    public boolean isRentOpaque;
+    
     /**
      * Creates new form GenInformationTab
      */
     public GenInformationTab() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,10 +70,12 @@ public class GenInformationTab extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel2.addMouseListener(this);
 
         jLabel7.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 103, 105));
         jLabel7.setText("Sell");
+        jLabel7.addMouseListener(this);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -98,10 +111,12 @@ public class GenInformationTab extends javax.swing.JPanel {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel11.addMouseListener(this);
 
         jLabel14.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 103, 105));
         jLabel14.setText("Rent");
+        jLabel14.addMouseListener(this);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -189,7 +204,7 @@ public class GenInformationTab extends javax.swing.JPanel {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -213,9 +228,18 @@ public class GenInformationTab extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        propertyType = (String) jComboBox1.getSelectedItem();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    public String getTitle() {
+        title = jTextField1.getText();
+        return title;
+    }
+    
+    public String getDescription() {
+        description = jTextArea1.getText();
+        return description;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
@@ -234,4 +258,62 @@ public class GenInformationTab extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+        if(e.getSource()==jLabel7 || e.getSource()==jPanel2) {
+            jLabel7.setOpaque(true);
+            jLabel7.setBackground(new java.awt.Color(128,128,128));
+            
+            jPanel2.setOpaque(true);
+            jPanel2.setBackground(new java.awt.Color(128,128,128));
+        }
+        if(e.getSource()==jLabel14 || e.getSource()==jPanel11) {
+            jLabel14.setOpaque(true);
+            jLabel14.setBackground(new java.awt.Color(128,128,128));
+            
+            jPanel11.setOpaque(true);
+            jPanel11.setBackground(new java.awt.Color(128,128,128));
+        }
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+        if(e.getSource()==jLabel7 || e.getSource()==jPanel2) {
+            jLabel14.setBackground(new java.awt.Color(255,255,255));
+            jLabel14.setOpaque(false);
+            
+            jPanel11.setBackground(new java.awt.Color(255,255,255));
+            jPanel11.setOpaque(false);
+        }
+        if(e.getSource()==jLabel14 || e.getSource()==jPanel11) {
+            jLabel7.setBackground(new java.awt.Color(255,255,255));
+            jLabel7.setOpaque(false);
+            
+            jPanel2.setBackground(new java.awt.Color(255,255,255));
+            jPanel2.setOpaque(false);
+        }
+        
+        isSellOpaque = jLabel7.isOpaque();
+        isRentOpaque = jLabel14.isOpaque();
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
 }
