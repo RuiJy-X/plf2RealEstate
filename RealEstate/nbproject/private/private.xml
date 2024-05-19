@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/jcost/OneDrive/Desktop/realEstateProject/plf2RealEstate/RealEstate/src/realestate/dashboard.java</file>
+=======
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/GenInformationTab.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/property.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/PhotosAndMediaTab.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/LoginAndSignUp.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/dashboard.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/LocationTab.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/KeyInformationTab.java</file>
+            <file>file:/D:/plf2RealEstate/RealEstate/src/realestate/RealEstate.java</file>
+>>>>>>> 2976695245167e2210922decc9134d4b150bd923
         </group>
     </open-files>
 </project-private>
