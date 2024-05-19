@@ -12,7 +12,14 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class KeyInformationTab extends javax.swing.JPanel {
-
+    public String status;
+    public String price;
+    public String bedrooms;
+    public String baths;
+    public String area;
+    public String block;
+    public String subdivisionName;
+    
     /**
      * Creates new form KeyInformationTab
      */
@@ -29,6 +36,7 @@ public class KeyInformationTab extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -36,19 +44,19 @@ public class KeyInformationTab extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        underConstructionButton = new javax.swing.JToggleButton();
+        proposedButton = new javax.swing.JToggleButton();
+        completeButton = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        priceField = new javax.swing.JTextField();
+        bedroomsField = new javax.swing.JTextField();
+        bathsField = new javax.swing.JTextField();
+        areaField = new javax.swing.JTextField();
+        blockField = new javax.swing.JTextField();
+        subdivisionField = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(804, 864));
@@ -75,22 +83,25 @@ public class KeyInformationTab extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Create a compelling listing, showcasing your property's features, amenities, and");
 
-        jToggleButton1.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(102, 255, 255));
-        jToggleButton1.setText("Under Construction");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(underConstructionButton);
+        underConstructionButton.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
+        underConstructionButton.setForeground(new java.awt.Color(102, 255, 255));
+        underConstructionButton.setText("Under Construction");
+        underConstructionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                underConstructionButtonActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(102, 255, 255));
-        jToggleButton2.setText("Proposed");
+        buttonGroup1.add(proposedButton);
+        proposedButton.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
+        proposedButton.setForeground(new java.awt.Color(102, 255, 255));
+        proposedButton.setText("Proposed");
 
-        jToggleButton3.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
-        jToggleButton3.setForeground(new java.awt.Color(102, 255, 255));
-        jToggleButton3.setText("Complete");
+        buttonGroup1.add(completeButton);
+        completeButton.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
+        completeButton.setForeground(new java.awt.Color(102, 255, 255));
+        completeButton.setText("Complete");
 
         jLabel7.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
         jLabel7.setText("Area");
@@ -105,47 +116,53 @@ public class KeyInformationTab extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
         jLabel10.setText("prime location to attract interested buyers.");
 
-        jTextField3.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jTextField3.setText("0.00");
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        priceField.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        priceField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        priceField.setText("0.00");
+        priceField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        priceField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                priceFieldActionPerformed(evt);
             }
         });
 
-        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        bedroomsField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        bedroomsField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        bedroomsField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                bedroomsFieldActionPerformed(evt);
             }
         });
 
-        jTextField8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        bathsField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        bathsField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        bathsField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                bathsFieldActionPerformed(evt);
             }
         });
 
-        jTextField9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        areaField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        areaField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        areaField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                areaFieldActionPerformed(evt);
             }
         });
 
-        jTextField10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        blockField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        blockField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        blockField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                blockFieldActionPerformed(evt);
             }
         });
 
-        jTextField11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        subdivisionField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        subdivisionField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 103, 105), 2, true));
+        subdivisionField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                subdivisionFieldActionPerformed(evt);
             }
         });
 
@@ -163,7 +180,7 @@ public class KeyInformationTab extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(completeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(192, 192, 192)
                                 .addComponent(jLabel5)
@@ -174,18 +191,18 @@ public class KeyInformationTab extends javax.swing.JPanel {
                                         .addGap(143, 143, 143)
                                         .addComponent(jLabel7))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bathsField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(43, 43, 43)
-                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(areaField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel9)
-                                    .addComponent(jTextField11))))
+                                    .addComponent(subdivisionField))))
                         .addGap(63, 63, 63))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(underConstructionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(87, 87, 87)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(proposedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel8)
                                 .addComponent(jLabel2)
@@ -193,11 +210,11 @@ public class KeyInformationTab extends javax.swing.JPanel {
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(blockField, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(46, 46, 46)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(bedroomsField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -213,9 +230,9 @@ public class KeyInformationTab extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(underConstructionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(proposedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(completeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -224,19 +241,19 @@ public class KeyInformationTab extends javax.swing.JPanel {
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bedroomsField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bathsField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(areaField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(blockField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subdivisionField, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(362, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -248,41 +265,89 @@ public class KeyInformationTab extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    
+    private void priceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_priceFieldActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void underConstructionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_underConstructionButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_underConstructionButtonActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void bedroomsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedroomsFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_bedroomsFieldActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void bathsFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bathsFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_bathsFieldActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void areaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_areaFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_areaFieldActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void blockFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blockFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_blockFieldActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void subdivisionFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subdivisionFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
-
+    }//GEN-LAST:event_subdivisionFieldActionPerformed
+    public String getStatus(){
+        
+        if ((underConstructionButton.isSelected())){
+            status = "Under Construction";
+        }else if ((proposedButton.isSelected())){
+            status = "Proposed";
+        }else if ((completeButton.isSelected())){
+            status = "Complete";
+        }else {
+            status = "null";
+        }
+        return status;
+       
+    }
+    
+    public String getPrice(){
+        price = priceField.getText();
+        return price;
+    }
+    
+    public String getBedrooms(){
+        bedrooms = bedroomsField.getText();
+        return bedrooms;
+    }
+    
+    public String getBaths(){
+        baths = bathsField.getText();
+        return baths;
+    }
+    
+    public String getArea(){
+        area = areaField.getText();
+        return area;
+    }
+    public String getBlock(){
+        block = blockField.getText();
+        return block;
+    }
+    
+    public String getSubdivisionName(){
+        subdivisionName = subdivisionField.getText();
+        return subdivisionName;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField areaField;
+    private javax.swing.JTextField bathsField;
+    private javax.swing.JTextField bedroomsField;
+    private javax.swing.JTextField blockField;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JToggleButton completeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -294,14 +359,9 @@ public class KeyInformationTab extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JTextField priceField;
+    private javax.swing.JToggleButton proposedButton;
+    private javax.swing.JTextField subdivisionField;
+    private javax.swing.JToggleButton underConstructionButton;
     // End of variables declaration//GEN-END:variables
 }

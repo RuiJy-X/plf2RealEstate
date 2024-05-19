@@ -21,6 +21,14 @@ public class dashboard extends javax.swing.JFrame {
     
     public String title;
     public String description;
+    public String status;
+    public String price;
+    public String bedrooms;
+    public String baths;
+    public String area;
+    public String block;
+    public String subdivisionName;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -332,13 +340,21 @@ public class dashboard extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         title = genInformationTab2.getTitle();
         description = genInformationTab2.getDescription();
+        status = keyInformationTab2.getStatus();
+        price = keyInformationTab2.getPrice();
+        bedrooms = keyInformationTab2.getBedrooms();
+        baths = keyInformationTab2.getBaths();
+        area = keyInformationTab2.getArea();
+        block = keyInformationTab2.getBlock();
+        subdivisionName = keyInformationTab2.getSubdivisionName();
+        
         
         try {
             createNewPropertyFile();
         } catch (IOException ex) {
-            
+            ex.printStackTrace();
         }
-        
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -365,7 +381,7 @@ public class dashboard extends javax.swing.JFrame {
         }
         if(genInformationTab2.isRentOpaque){
             fileWriter.write("Rent");
-        }
+       }
         
         fileWriter.write("\n");
         
@@ -378,6 +394,35 @@ public class dashboard extends javax.swing.JFrame {
         fileWriter.write("\n");
         
         fileWriter.write(description);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(status);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(price);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(bedrooms);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(baths);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(area);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(block);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.write(subdivisionName);
+        
         
         fileWriter.close();
         
