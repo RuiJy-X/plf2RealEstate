@@ -14,7 +14,10 @@ public class RealEstate {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        dashboard dashboard;
         // TODO code application logic here
+        dashboard = new dashboard();
+        dashboard.setVisible(true);
     }
     
 }

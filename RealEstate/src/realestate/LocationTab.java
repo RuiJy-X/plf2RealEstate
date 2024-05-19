@@ -9,7 +9,11 @@ package realestate;
  * @author User
  */
 public class LocationTab extends javax.swing.JPanel {
-
+    public String province;
+    public String city;
+    public String barangay;
+    public String street;
+ 
     /**
      * Creates new form LocationTab
      */
