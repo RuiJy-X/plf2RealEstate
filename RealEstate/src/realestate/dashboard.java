@@ -44,9 +44,6 @@ public class dashboard extends javax.swing.JFrame {
         tab1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -90,14 +87,8 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
 
-        jLabel3.setText("insert logo here");
-
-        jLabel6.setText("insert profile icon");
-
-        jLabel7.setText("insert name");
-
         jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
         jButton2.setText("Manage Properties");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
@@ -109,7 +100,7 @@ public class dashboard extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
         jButton1.setText("Dashboard");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
@@ -121,7 +112,7 @@ public class dashboard extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
         jButton4.setText("List property");
         jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton4.setBorderPainted(false);
@@ -139,57 +130,40 @@ public class dashboard extends javax.swing.JFrame {
             .addGroup(tab1Layout.createSequentialGroup()
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel3))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel6))))
-                    .addGroup(tab1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(jLabel2))
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
                     .addGroup(tab1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jButton2)))
-                .addContainerGap(150, Short.MAX_VALUE))
+                        .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
+                            .addComponent(jLabel1))))
+                .addGap(72, 72, 72))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab1Layout.createSequentialGroup()
+                .addComponent(jButton2)
+                .addGap(16, 16, 16))
         );
         tab1Layout.setVerticalGroup(
             tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab1Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jLabel3)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel7)
-                .addGap(53, 53, 53)
+                .addGap(194, 194, 194)
                 .addComponent(jButton2)
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel2)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel1)
-                        .addGap(41, 41, 41))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(68, 68, 68)
+                        .addGap(186, 186, 186)
                         .addComponent(jButton4)
-                        .addGap(18, 18, 18)))
-                .addComponent(jLabel2)
-                .addContainerGap(422, Short.MAX_VALUE))
+                        .addContainerGap(361, Short.MAX_VALUE))
+                    .addGroup(tab1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
-        jLabel3.getAccessibleContext().setAccessibleName("");
-        jLabel6.getAccessibleContext().setAccessibleName("");
-        jLabel7.getAccessibleContext().setAccessibleName("");
         jButton2.getAccessibleContext().setAccessibleName("");
         jButton1.getAccessibleContext().setAccessibleName("");
 
@@ -297,7 +271,7 @@ public class dashboard extends javax.swing.JFrame {
                         .addComponent(jButton6)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(listPropertyTabSideBarLayout.createSequentialGroup()
-                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGap(0, 19, Short.MAX_VALUE)
                         .addGroup(listPropertyTabSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -323,7 +297,7 @@ public class dashboard extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("tab2", listPropertyTabSideBar);
 
-        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -43, -1, 990));
+        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -43, 400, 990));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -637,11 +611,8 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
