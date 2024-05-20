@@ -101,6 +101,7 @@ public class dashboard extends javax.swing.JFrame {
         jButton2.setText("Manage Properties");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -111,6 +112,8 @@ public class dashboard extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
         jButton1.setText("Dashboard");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -121,6 +124,8 @@ public class dashboard extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
         jButton4.setText("List property");
         jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
