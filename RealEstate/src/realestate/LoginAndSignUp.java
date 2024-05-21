@@ -4,6 +4,10 @@
  */
 package realestate;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author User
@@ -15,6 +19,25 @@ public class LoginAndSignUp extends javax.swing.JFrame {
      */
     public LoginAndSignUp() {
         initComponents();
+        File image = new File("C:\\plf2RealEstate\\RealEstate\\landingpageicon.jpg");
+        File loginImage = new File("C:\\plf2RealEstate\\RealEstate\\loginPageIcon.jpg");
+        String loginImagePath = loginImage.getAbsolutePath();
+        String imagePath = image.getAbsolutePath();
+        
+        ImageIcon imageIcon =  new ImageIcon(imagePath);
+        Image img = imageIcon.getImage();
+        Image imageScaled = img.getScaledInstance(iconLabel.getWidth(), iconLabel.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imageScaled);
+        iconLabel.setIcon(scaledIcon);
+        
+        ImageIcon loginImageIcon = new ImageIcon(loginImagePath);
+        Image temploginimg = loginImageIcon.getImage();
+        Image loginImageScaled = temploginimg.getScaledInstance(loginIconLabel.getWidth(), loginIconLabel.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon loginScaled = new ImageIcon(loginImageScaled);
+        loginIconLabel.setIcon(loginScaled);
+        
+        
+        
     }
 
     /**
@@ -28,8 +51,17 @@ public class LoginAndSignUp extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         loadingPage = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        loadingPageLabel = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        iconLabel = new javax.swing.JLabel();
         SignUpPage = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -48,6 +80,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         registerButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         LogInPage = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
@@ -60,6 +94,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        loginIconLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -68,43 +103,104 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         loadingPage.setPreferredSize(new java.awt.Dimension(1280, 720));
+        loadingPage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Lato", 1, 48)); // NOI18N
-        jButton1.setText("Sign up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jPanel5.setBackground(new java.awt.Color(255, 252, 182));
 
-        jButton2.setFont(new java.awt.Font("Lato", 1, 48)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 214, 0));
+        jButton2.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
         jButton2.setText("Log in");
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 214, 0), 4, true));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout loadingPageLayout = new javax.swing.GroupLayout(loadingPage);
-        loadingPage.setLayout(loadingPageLayout);
-        loadingPageLayout.setHorizontalGroup(
-            loadingPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loadingPageLayout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 777, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+        jButton1.setBackground(new java.awt.Color(255, 214, 0));
+        jButton1.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
+        jButton1.setText("Sign up");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 214, 0), 4, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(1106, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
-        loadingPageLayout.setVerticalGroup(
-            loadingPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loadingPageLayout.createSequentialGroup()
-                .addContainerGap(407, Short.MAX_VALUE)
-                .addGroup(loadingPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(252, 252, 252))
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        loadingPage.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 90));
+
+        jPanel6.setBackground(new java.awt.Color(255, 239, 195));
+
+        jPanel7.setBackground(new java.awt.Color(255, 239, 195));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        loadingPageLabel.setFont(new java.awt.Font("Lato", 1, 90)); // NOI18N
+        loadingPageLabel.setText("Let's find");
+        jPanel7.add(loadingPageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 120));
+
+        jLabel12.setFont(new java.awt.Font("Lato", 1, 90)); // NOI18N
+        jLabel12.setText("your");
+        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Lato", 1, 90)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 184, 0));
+        jLabel13.setText("dream");
+        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Lato", 1, 90)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 184, 0));
+        jLabel14.setText("home!");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        jPanel8.setLayout(new java.awt.BorderLayout());
+        jPanel8.add(iconLabel, java.awt.BorderLayout.CENTER);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+
+        loadingPage.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 90, 1500, 640));
 
         jTabbedPane1.addTab("tab1", loadingPage);
 
@@ -202,7 +298,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,22 +334,50 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         SignUpPage.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, -1, 720));
 
         jPanel3.setBackground(new java.awt.Color(242, 235, 217));
 
+        jPanel9.setBackground(new java.awt.Color(242, 235, 217));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1290, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1195, Short.MAX_VALUE)
+        );
+
+        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\plf2RealEstate\\RealEstate\\Architectural Design Elements of Modern American Homes _ FH.jpg")); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(839, 839, 839)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         SignUpPage.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 800, 730));
@@ -371,23 +495,14 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         LogInPage.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, 560, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(loginIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 690));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-
-        LogInPage.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
+        LogInPage.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 910, 690));
 
         jTabbedPane1.addTab("tab3", LogInPage);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1470, 760));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1470, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -412,6 +527,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         
         dashboard dashboard = new dashboard();
         dashboard.setVisible(true);
+        
+        dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
@@ -460,6 +577,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LogInPage;
     private javax.swing.JPanel SignUpPage;
+    private javax.swing.JLabel iconLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -469,6 +587,10 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -481,6 +603,11 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
@@ -491,6 +618,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel loadingPage;
+    private javax.swing.JLabel loadingPageLabel;
+    private javax.swing.JLabel loginIconLabel;
     private javax.swing.JButton registerButton;
     // End of variables declaration//GEN-END:variables
 }

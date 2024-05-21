@@ -87,6 +87,7 @@ public class KeyInformationTab extends javax.swing.JPanel {
         underConstructionButton.setFont(new java.awt.Font("Lato", 1, 14)); // NOI18N
         underConstructionButton.setForeground(new java.awt.Color(102, 255, 255));
         underConstructionButton.setText("Under Construction");
+        underConstructionButton.setBorderPainted(false);
         underConstructionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 underConstructionButtonActionPerformed(evt);

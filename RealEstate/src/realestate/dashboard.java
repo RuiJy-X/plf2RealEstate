@@ -70,6 +70,8 @@ public class dashboard extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        panelForDashboard = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -401,21 +403,41 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel5.setText("Dashboard");
 
+        panelForDashboard.setBackground(new java.awt.Color(51, 255, 51));
+
+        jButton7.setText("Add dashbaord object");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel5)
-                .addContainerGap(799, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel5)
+                        .addGap(53, 53, 53)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(panelForDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel5)
-                .addContainerGap(795, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jButton7))
+                .addGap(81, 81, 81)
+                .addComponent(panelForDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab3", jPanel5);
@@ -493,6 +515,14 @@ public class dashboard extends javax.swing.JFrame {
     private void jPanel6MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_jPanel6MouseWheelMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel6MouseWheelMoved
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        test db1 = new test("andrei", "is awesome");
+        panelForDashboard.add(db1);
+        db1.setVisible(true);
+        db1.revalidate();
+        db1.repaint();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     
     public String createRandomFileName() {
@@ -606,6 +636,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -630,6 +661,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel listPropertyPanel;
     private javax.swing.JPanel listPropertyTabSideBar;
     private realestate.LocationTab locationTab1;
+    private javax.swing.JPanel panelForDashboard;
     private realestate.PhotosAndMediaTab photosAndMediaTab2;
     private javax.swing.JPanel tab1;
     // End of variables declaration//GEN-END:variables
