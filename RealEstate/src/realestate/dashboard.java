@@ -4,8 +4,13 @@
  */
 package realestate;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -28,6 +33,12 @@ public class dashboard extends javax.swing.JFrame {
     public String area;
     public String block;
     public String subdivisionName;
+    public String photo;
+    public String media;
+    public String province;
+    public String city;
+    public String barangay;
+    public String street;
     
 
     /**
@@ -39,58 +50,48 @@ public class dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        tab1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        sideBar = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        listPropertyTabSideBar = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        dashboardPanel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        propertiesPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
         listPropertyPanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        listPropertyNameLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
+        listPropertyPanelHoder = new javax.swing.JPanel();
         locationTab1 = new realestate.LocationTab();
         genInformationTab2 = new realestate.GenInformationTab();
         keyInformationTab2 = new realestate.KeyInformationTab();
         photosAndMediaTab2 = new realestate.PhotosAndMediaTab();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        panelForDashboard = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        managementPropertyTab = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 820));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1280, 820));
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tab1.setBackground(new java.awt.Color(102, 102, 102));
+        sideBar.setBackground(new java.awt.Color(217, 217, 217));
 
-        jLabel1.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Montserrat Alternates Medium", 0, 20)); // NOI18N
-
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(217, 217, 217));
+        jButton2.setFont(new java.awt.Font("Lato", 1, 23)); // NOI18N
         jButton2.setText("Manage Properties");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
@@ -101,8 +102,8 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(217, 217, 217));
+        jButton1.setFont(new java.awt.Font("Lato", 1, 23)); // NOI18N
         jButton1.setText("Dashboard");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
@@ -113,9 +114,162 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setFont(new java.awt.Font("Lato", 1, 36)); // NOI18N
-        jButton4.setText("List property");
+        jButton6.setBackground(new java.awt.Color(217, 217, 217));
+        jButton6.setFont(new java.awt.Font("Lato", 1, 23)); // NOI18N
+        jButton6.setText("Log Out");
+        jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setBackground(new java.awt.Color(217, 217, 217));
+        jButton7.setFont(new java.awt.Font("Lato", 1, 23)); // NOI18N
+        jButton7.setText("Appointments");
+        jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout sideBarLayout = new javax.swing.GroupLayout(sideBar);
+        sideBar.setLayout(sideBarLayout);
+        sideBarLayout.setHorizontalGroup(
+            sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sideBarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sideBarLayout.createSequentialGroup()
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarLayout.createSequentialGroup()
+                        .addGap(0, 19, Short.MAX_VALUE)
+                        .addGroup(sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(63, 63, 63))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarLayout.createSequentialGroup()
+                                .addGroup(sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(20, 20, 20))))))
+        );
+        sideBarLayout.setVerticalGroup(
+            sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sideBarLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jButton1)
+                .addGap(139, 139, 139)
+                .addComponent(jButton2)
+                .addGap(155, 155, 155)
+                .addComponent(jButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(169, 169, 169))
+        );
+
+        jButton2.getAccessibleContext().setAccessibleName("");
+        jButton1.getAccessibleContext().setAccessibleName("");
+
+        mainPanel.add(sideBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 260, 910));
+        sideBar.getAccessibleContext().setAccessibleName("");
+
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setRequestFocusEnabled(false);
+
+        dashboardPanel.setBackground(new java.awt.Color(242, 235, 217));
+
+        jPanel2.setBackground(new java.awt.Color(242, 235, 217));
+
+        jComboBox1.setBackground(new java.awt.Color(217, 217, 217));
+        jComboBox1.setEditable(true);
+        jComboBox1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sell", "Rent" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox2.setBackground(new java.awt.Color(217, 217, 217));
+        jComboBox2.setEditable(true);
+        jComboBox2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Condominium", "Commercial", "Apartment", "House", "Land" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField1.setText("Search");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField2.setText("Enter Location");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1)
+                    .addComponent(jComboBox2)
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField1))
+                .addContainerGap())
+        );
+
+        jScrollPane1.setBackground(new java.awt.Color(242, 235, 217));
+        jScrollPane1.setForeground(new java.awt.Color(242, 235, 217));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        propertiesPanel.setBackground(new java.awt.Color(242, 235, 217));
+        propertiesPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        propertiesPanel.setPreferredSize(new java.awt.Dimension(845, 4969));
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 30, 30);
+        flowLayout1.setAlignOnBaseline(true);
+        propertiesPanel.setLayout(flowLayout1);
+        jScrollPane1.setViewportView(propertiesPanel);
+
+        jPanel1.setBackground(new java.awt.Color(255, 252, 182));
+
+        jButton4.setBackground(new java.awt.Color(243, 255, 99));
+        jButton4.setFont(new java.awt.Font("Lato", 1, 23)); // NOI18N
+        jButton4.setText("List your Property ");
         jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -125,231 +279,96 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
-        tab1.setLayout(tab1Layout);
-        tab1Layout.setHorizontalGroup(
-            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab1Layout.createSequentialGroup()
-                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addComponent(jLabel1))))
-                .addGap(72, 72, 72))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab1Layout.createSequentialGroup()
-                .addComponent(jButton2)
-                .addGap(16, 16, 16))
-        );
-        tab1Layout.setVerticalGroup(
-            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab1Layout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jButton2)
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel2)
-                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(jButton4)
-                        .addContainerGap(361, Short.MAX_VALUE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-
-        jButton2.getAccessibleContext().setAccessibleName("");
-        jButton1.getAccessibleContext().setAccessibleName("");
-
-        jTabbedPane2.addTab("tab1", tab1);
-        tab1.getAccessibleContext().setAccessibleName("");
-
-        listPropertyTabSideBar.setBackground(new java.awt.Color(102, 102, 102));
-
-        jButton6.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jButton6.setText("Back");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
-        jLabel9.setText("General Information Tab");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel9)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel9)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-
-        jLabel10.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
-        jLabel10.setText("Key Information Tab");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel10)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-
-        jLabel11.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
-        jLabel11.setText("Photos & Media Tab");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel11)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-
-        jLabel12.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
-        jLabel12.setText("Location Tab");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addComponent(jButton4)
+                .addGap(295, 295, 295))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel12)
-                .addContainerGap(46, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout listPropertyTabSideBarLayout = new javax.swing.GroupLayout(listPropertyTabSideBar);
-        listPropertyTabSideBar.setLayout(listPropertyTabSideBarLayout);
-        listPropertyTabSideBarLayout.setHorizontalGroup(
-            listPropertyTabSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listPropertyTabSideBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(listPropertyTabSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(listPropertyTabSideBarLayout.createSequentialGroup()
-                        .addComponent(jButton6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(listPropertyTabSideBarLayout.createSequentialGroup()
-                        .addGap(0, 19, Short.MAX_VALUE)
-                        .addGroup(listPropertyTabSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(36, 36, 36))))
-        );
-        listPropertyTabSideBarLayout.setVerticalGroup(
-            listPropertyTabSideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listPropertyTabSideBarLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jButton6)
-                .addGap(51, 51, 51)
+        javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
+        dashboardPanel.setLayout(dashboardPanelLayout);
+        dashboardPanelLayout.setHorizontalGroup(
+            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(dashboardPanelLayout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        dashboardPanelLayout.setVerticalGroup(
+            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dashboardPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 82, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab2", listPropertyTabSideBar);
-
-        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -43, 400, 990));
-
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.addTab("tab3", dashboardPanel);
 
         listPropertyPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setFont(new java.awt.Font("Montserrat Alternates Medium", 1, 24)); // NOI18N
-        jLabel4.setText("List Property Tab");
+        listPropertyNameLabel.setFont(new java.awt.Font("Montserrat Alternates Medium", 1, 24)); // NOI18N
+        listPropertyNameLabel.setText("List Property Tab");
 
         jScrollPane2.setBackground(new java.awt.Color(153, 255, 153));
         jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setPreferredSize(new java.awt.Dimension(845, 4969));
-        jPanel6.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+        listPropertyPanelHoder.setBackground(new java.awt.Color(239, 241, 245));
+        listPropertyPanelHoder.setPreferredSize(new java.awt.Dimension(845, 3800));
+        listPropertyPanelHoder.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                jPanel6MouseWheelMoved(evt);
+                listPropertyPanelHoderMouseWheelMoved(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout listPropertyPanelHoderLayout = new javax.swing.GroupLayout(listPropertyPanelHoder);
+        listPropertyPanelHoder.setLayout(listPropertyPanelHoderLayout);
+        listPropertyPanelHoderLayout.setHorizontalGroup(
+            listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(keyInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        listPropertyPanelHoderLayout.setVerticalGroup(
+            listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(keyInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 1329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1405, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 1384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setViewportView(jPanel6);
+        jScrollPane2.setViewportView(listPropertyPanelHoder);
 
         jButton3.setText("Publish");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -370,18 +389,18 @@ public class dashboard extends javax.swing.JFrame {
         listPropertyPanelLayout.setHorizontalGroup(
             listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listPropertyPanelLayout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(429, Short.MAX_VALUE)
                 .addGroup(listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listPropertyPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(listPropertyNameLabel)
                         .addGap(379, 379, 379))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listPropertyPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))))
             .addGroup(listPropertyPanelLayout.createSequentialGroup()
-                .addGap(176, 176, 176)
-                .addComponent(jButton3)
-                .addGap(50, 50, 50)
+                .addGap(471, 471, 471)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -389,101 +408,211 @@ public class dashboard extends javax.swing.JFrame {
             listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listPropertyPanelLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jLabel4)
+                .addComponent(listPropertyNameLabel)
                 .addGap(18, 18, 18)
                 .addGroup(listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab2", listPropertyPanel);
 
-        jLabel5.setText("Dashboard");
-
-        panelForDashboard.setBackground(new java.awt.Color(51, 255, 51));
-
-        jButton7.setText("Add dashbaord object");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jLabel5)
-                        .addGap(53, 53, 53)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(panelForDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(247, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jButton7))
-                .addGap(81, 81, 81)
-                .addComponent(panelForDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel5);
-
         jLabel8.setText("Manage properties");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout managementPropertyTabLayout = new javax.swing.GroupLayout(managementPropertyTab);
+        managementPropertyTab.setLayout(managementPropertyTabLayout);
+        managementPropertyTabLayout.setHorizontalGroup(
+            managementPropertyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(managementPropertyTabLayout.createSequentialGroup()
                 .addGap(141, 141, 141)
                 .addComponent(jLabel8)
-                .addContainerGap(740, Short.MAX_VALUE))
+                .addContainerGap(1075, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        managementPropertyTabLayout.setVerticalGroup(
+            managementPropertyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(managementPropertyTabLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel8)
-                .addContainerGap(797, Short.MAX_VALUE))
+                .addContainerGap(802, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel3);
+        jTabbedPane1.addTab("tab1", managementPropertyTab);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, -45, 980, 910));
+        mainPanel.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -45, 1320, 910));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        jPanel1.getAccessibleContext().setAccessibleName("");
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        mainPanel.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTabbedPane1.setSelectedIndex(1);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    public void displayAllProperties() {
+        
+        try {
+            
+            File file = new File("properties.txt");
+            
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            
+            String line;
+            while((line = reader.readLine()) != null) {
+                String[] propertyDetails = line.split(",");
+                
+                JPanel newPropertyPanel = new JPanel();
+                
+                JLabel photo = new javax.swing.JLabel();
+                JLabel title = new javax.swing.JLabel();
+                JLabel bed = new javax.swing.JLabel();
+                JLabel bath = new javax.swing.JLabel();
+                JLabel area = new javax.swing.JLabel();
+                JLabel price = new javax.swing.JLabel();
+                JPanel panelHolderLocation = new javax.swing.JPanel();
+                JLabel street = new javax.swing.JLabel();
+                JLabel city = new javax.swing.JLabel();
+                JLabel barangay = new javax.swing.JLabel();
+                JLabel province = new javax.swing.JLabel();
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTabbedPane1.setSelectedIndex(2);
-    }//GEN-LAST:event_jButton2ActionPerformed
+                newPropertyPanel.setBackground(new java.awt.Color(253, 245, 230));
+                newPropertyPanel.setPreferredSize(new java.awt.Dimension(270, 300));
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
-        jTabbedPane2.setSelectedIndex(1);
-    }//GEN-LAST:event_jButton4ActionPerformed
+                photo.setText("Image");
 
+                title.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+                title.setText("jLabel2");
+
+                bed.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+                bed.setText("jLabel2");
+
+                bath.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+                bath.setText("jLabel2");
+
+                area.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+                area.setText("jLabel2");
+
+                price.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
+                price.setForeground(new java.awt.Color(30, 11, 146));
+                price.setText("jLabel2");
+
+                panelHolderLocation.setBackground(new java.awt.Color(253, 245, 230));
+                panelHolderLocation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                street.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+                street.setText("jLabel2");
+                panelHolderLocation.add(street, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 33));
+
+                city.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+                city.setText("jLabel2");
+                panelHolderLocation.add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 81, 33));
+
+                barangay.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+                barangay.setText("jLabel2");
+                panelHolderLocation.add(barangay, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 81, 33));
+
+                province.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+                province.setText("jLabel2");
+                panelHolderLocation.add(province, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 81, 33));
+
+                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(newPropertyPanel);
+                newPropertyPanel.setLayout(layout);
+                layout.setHorizontalGroup(
+                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(photo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(bed)
+                                .addGap(58, 58, 58)
+                                .addComponent(bath)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addComponent(panelHolderLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                );
+                layout.setVerticalGroup(
+                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelHolderLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bed, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bath, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                );
+                
+                for(int i = 0; i < propertyDetails.length;i++) {
+                    
+                    if(i==3) {
+                        title.setText(propertyDetails[i]);
+                    }else if(i==6) {
+                        price.setText(propertyDetails[i]);
+                    }else if(i==7) {
+                        bed.setText(propertyDetails[i]);
+                    }else if(i==8) {
+                        bath.setText(propertyDetails[i]);
+                    }else if(i==9) {
+                        area.setText(propertyDetails[i]);
+                    }else if(i==14) {
+                        province.setText(propertyDetails[i]);
+                    }else if(i==15) {
+                        city.setText(propertyDetails[i]);
+                    }else if(i==16) {
+                        barangay.setText(propertyDetails[i]);
+                    }else if(i==17) {
+                        street.setText(propertyDetails[i]);
+                    }
+                    
+                }
+                
+                newPropertyPanel.add(title);
+                newPropertyPanel.add(price);
+                newPropertyPanel.add(bath);
+                newPropertyPanel.add(area);
+                newPropertyPanel.add(bed);
+                newPropertyPanel.add(street);
+                newPropertyPanel.add(barangay);
+                newPropertyPanel.add(province);
+                newPropertyPanel.add(city);
+                newPropertyPanel.add(panelHolderLocation);
+                newPropertyPanel.add(photo);
+                
+                propertiesPanel.add(newPropertyPanel);
+                
+                propertiesPanel.revalidate();
+                propertiesPanel.repaint();
+                
+                
+            }
+            
+            
+
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+    }
+    
+    
+    
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         title = genInformationTab2.getTitle();
         description = genInformationTab2.getDescription();
@@ -494,10 +623,16 @@ public class dashboard extends javax.swing.JFrame {
         area = keyInformationTab2.getArea();
         block = keyInformationTab2.getBlock();
         subdivisionName = keyInformationTab2.getSubdivisionName();
+        photo = photosAndMediaTab2.imageFilePath;
+        media = photosAndMediaTab2.otherImageFilePath;
+        province = locationTab1.getProvince();
+        city = locationTab1.getCity();
+        barangay = locationTab1.getBarangay();
+        street = locationTab1.getStreet();
         
         
         try {
-            createNewPropertyFile();
+            createNewProperty();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -508,36 +643,122 @@ public class dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void listPropertyPanelHoderMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_listPropertyPanelHoderMouseWheelMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listPropertyPanelHoderMouseWheelMoved
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+//        propertiesPanel.removeAll();
+//        propertiesPanel.validate();
+        
+        
+
+//        File propertyFile = new File("properties.txt");
+//       
+//        
+//        try {
+//            
+//
+//            if(propertyFile.createNewFile()) {
+//                System.out.println("File is Created");
+//            }else {
+//                System.out.println("File Already Existed");
+//            }
+//
+//            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+//
+//            String line;
+//            while((line = reader.readLine())!=null) {
+//                String[] propertyDetails = line.split(",");
+//
+//                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(
+//                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+//                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17]);
+//                
+//                        
+//                propertiesPanel.add(displayAll);
+//                
+//                
+//                displayAll.setVisible(true);
+//                displayAll.revalidate();
+//                displayAll.repaint();
+//                
+//                
+//              
+//            }
+//            reader.close();
+//            
+//            
+//            
+//            
+//        }catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jTabbedPane2.setSelectedIndex(0);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jPanel6MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_jPanel6MouseWheelMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel6MouseWheelMoved
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        test db1 = new test("andrei", "is awesome");
-        panelForDashboard.add(db1);
-        db1.setVisible(true);
-        db1.revalidate();
-        db1.repaint();
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     
     public String createRandomFileName() {
         
         int number = (int) ((Math.random() * (1001 - 1)) + 1);
         
-        String fileName = "property"+number+".txt";
+        String fileName = "property"+number;
         
         return fileName;  
     }
     
     
-    public void createNewPropertyFile() throws IOException {
+    public void createNewProperty() throws IOException {
         
-        FileWriter fileWriter = new FileWriter(createRandomFileName());
+        File propertiesFile = new File("properties.txt");
+        
+        try {
+            if (propertiesFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        
+        FileWriter fileWriter = new FileWriter(propertiesFile,true);
+        
+        fileWriter.write(createRandomFileName());
+        fileWriter.write(",");
         
         if(genInformationTab2.isSellOpaque){
             fileWriter.write("Sell");
@@ -546,46 +767,39 @@ public class dashboard extends javax.swing.JFrame {
             fileWriter.write("Rent");
        }
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(genInformationTab2.propertyType);
         
-        fileWriter.write(genInformationTab2.propertyType);
+        fileWriter.write(",");fileWriter.write(title);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(description);
         
-        fileWriter.write(title);
+        fileWriter.write(",");fileWriter.write(status);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(price);
         
-        fileWriter.write(description);
+        fileWriter.write(",");fileWriter.write(bedrooms);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(baths);
         
-        fileWriter.write(status);
+        fileWriter.write(",");fileWriter.write(area);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(block);
         
-        fileWriter.write(price);
+        fileWriter.write(",");fileWriter.write(subdivisionName);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(photo);
         
-        fileWriter.write(bedrooms);
+        fileWriter.write(",");fileWriter.write(media);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(province);
         
-        fileWriter.write(baths);
+        fileWriter.write(",");fileWriter.write(city);
         
-        fileWriter.write("\n");
+        fileWriter.write(",");fileWriter.write(barangay);
         
-        fileWriter.write(area);
-        
-        fileWriter.write("\n");
-        
-        fileWriter.write(block);
+        fileWriter.write(",");fileWriter.write(street);
         
         fileWriter.write("\n");
-        
-        fileWriter.write(subdivisionName);
-        
         
         fileWriter.close();
         
@@ -629,6 +843,7 @@ public class dashboard extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel dashboardPanel;
     private realestate.GenInformationTab genInformationTab2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -637,32 +852,25 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    public javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private realestate.KeyInformationTab keyInformationTab2;
+    private javax.swing.JLabel listPropertyNameLabel;
     private javax.swing.JPanel listPropertyPanel;
-    private javax.swing.JPanel listPropertyTabSideBar;
+    private javax.swing.JPanel listPropertyPanelHoder;
     private realestate.LocationTab locationTab1;
-    private javax.swing.JPanel panelForDashboard;
+    public javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel managementPropertyTab;
     private realestate.PhotosAndMediaTab photosAndMediaTab2;
-    private javax.swing.JPanel tab1;
+    private javax.swing.JPanel propertiesPanel;
+    private javax.swing.JPanel sideBar;
     // End of variables declaration//GEN-END:variables
 }
