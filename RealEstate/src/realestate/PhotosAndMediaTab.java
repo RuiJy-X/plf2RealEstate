@@ -47,7 +47,8 @@ public class PhotosAndMediaTab extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(804, 864));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 245));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(139, 217, 185), 5, true));
         jPanel1.setPreferredSize(new java.awt.Dimension(804, 864));
 
         jLabel1.setFont(new java.awt.Font("Lato", 1, 25)); // NOI18N
@@ -102,7 +103,7 @@ public class PhotosAndMediaTab extends javax.swing.JPanel {
                         .addGap(514, 514, 514))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +116,7 @@ public class PhotosAndMediaTab extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(42, 42, 42)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
@@ -134,7 +135,7 @@ public class PhotosAndMediaTab extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(1401, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
