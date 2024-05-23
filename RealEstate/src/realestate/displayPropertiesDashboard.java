@@ -4,6 +4,9 @@
  */
 package realestate;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -16,7 +19,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
      */
     
     
-    public displayPropertiesDashboard(String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail) {
+    public displayPropertiesDashboard(String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail) {
         initComponents();
         title.setText(titleDetail);
         price.setText(priceDetail);
@@ -25,11 +28,11 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         area.setText(areaDetail);
         
         
-//        ImageIcon imageIcon = new ImageIcon(photoDetail);
-//        Image img = imageIcon.getImage();
-//        Image imageScaled = img.getScaledInstance(photo.getWidth(), photo.getHeight(), Image.SCALE_SMOOTH);
-//        ImageIcon scaledIcon = new ImageIcon(imageScaled);
-//        photo.setIcon(scaledIcon);
+        ImageIcon imageIcon = new ImageIcon(photoDetail);
+        Image img = imageIcon.getImage();
+        Image imageScaled = img.getScaledInstance(260, 110, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imageScaled);
+        photo.setIcon(scaledIcon);
         
         province.setText(provinceDetail);
         city.setText(cityDetail);
@@ -46,7 +49,6 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        photo = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         bed = new javax.swing.JLabel();
         bath = new javax.swing.JLabel();
@@ -57,13 +59,12 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         barangay = new javax.swing.JLabel();
         city = new javax.swing.JLabel();
         province = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        photo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(253, 245, 230));
         setPreferredSize(new java.awt.Dimension(270, 300));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        photo.setText("Image");
-        add(photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 278, 130));
 
         title.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         title.setText("jLabel2");
@@ -106,6 +107,11 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         jPanel1.add(province);
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 250, 40));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 110));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -116,6 +122,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     private javax.swing.JLabel bed;
     private javax.swing.JLabel city;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel photo;
     private javax.swing.JLabel price;
     private javax.swing.JLabel province;
