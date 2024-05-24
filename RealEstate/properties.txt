@@ -1,2 +1,1 @@
-property604,Sell,Condominium,Rujz House,10 story building sheesh mansion,Complete,500000,15,15,150,105,Rujz Subdivision,C:\Users\User\Downloads\picrture.jpg,C:\Users\User\Downloads\picrture.jpg,Negros Occidental,Bacolod City,Brgy. 3,Rizal Street
-property669,Sell,House,Ron's house,grabe dako2 gd,Complete,50000000,50,10,160,69,Cant thought Valley,C:\Users\User\Downloads\House Design.jpg,C:\Users\User\Downloads\House Design.jpg,Negros Occidental,La Carlota City,Brgy. Cubay,University of Ateneo La salle- Recoletos
+property815,Sell,Condominium,title,Description,Under Construction,100000,10,10,10000,Block,Subdivision,E:\realEstateApplication\applicationLogo.png,E:\realEstateApplication\applicationLogoTransparent.png,Provice,City,Barangay,Street

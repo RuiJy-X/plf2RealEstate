@@ -7,7 +7,6 @@ package realestate;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-
 /**
  *
  * @author jcost
@@ -18,8 +17,10 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
      * Creates new form displayPropertiesDashboard
      */
     
+   
     
-    public displayPropertiesDashboard(String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail) {
+    
+    public displayPropertiesDashboard(String propertyName, String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail) {
         initComponents();
         title.setText(titleDetail);
         price.setText(priceDetail);
@@ -27,6 +28,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         bath.setText(bathDetail);
         area.setText(areaDetail);
         
+        viewButton.setName(propertyName);
         
         ImageIcon imageIcon = new ImageIcon(photoDetail);
         Image img = imageIcon.getImage();
@@ -61,6 +63,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         province = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         photo = new javax.swing.JLabel();
+        viewButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(253, 245, 230));
         setPreferredSize(new java.awt.Dimension(270, 300));
@@ -68,24 +71,24 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
 
         title.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         title.setText("jLabel2");
-        add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 266, 24));
+        add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 266, 24));
 
         bed.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         bed.setText("jLabel2");
-        add(bed, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 24));
+        add(bed, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, 24));
 
         bath.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         bath.setText("jLabel2");
-        add(bath, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, 24));
+        add(bath, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, 24));
 
         area.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         area.setText("jLabel2");
-        add(area, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 80, 24));
+        add(area, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 80, 24));
 
         price.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
         price.setForeground(new java.awt.Color(30, 11, 146));
         price.setText("jLabel2");
-        add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 249, 53));
+        add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 210, 40));
 
         jPanel1.setBackground(new java.awt.Color(253, 245, 230));
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -106,13 +109,28 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         province.setText("jLabel2");
         jPanel1.add(province);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 250, 40));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 250, 40));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 110));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
+
+        viewButton.setText("viewButton");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButtonActionPerformed(evt);
+            }
+        });
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 100, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        dashboard dashboard = new dashboard();
+        
+        dashboard.displayIndividualProperty(viewButton);
+        dashboard.individualDisplayPropertyPlaceholder.setVisible(true);
+    }//GEN-LAST:event_viewButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -128,5 +146,6 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     private javax.swing.JLabel province;
     private javax.swing.JLabel street;
     private javax.swing.JLabel title;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }

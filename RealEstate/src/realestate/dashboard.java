@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -23,6 +24,49 @@ public class dashboard extends javax.swing.JFrame {
      */
     public dashboard() {
         initComponents();
+        
+        File propertyFile = new File("properties.txt");
+        
+        try {
+            
+
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",");
+
+                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
+                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
+                
+                        
+                propertiesPanel.add(displayAll);
+                
+                
+                displayAll.setVisible(true);
+                displayAll.revalidate();
+                displayAll.repaint();
+                
+                
+              
+            }
+            reader.close();
+            
+            
+            
+            
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        
         
     }
     
@@ -71,6 +115,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         dashboardPanel = new javax.swing.JPanel();
+        individualDisplayPropertyPlaceholder = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         propertiesPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -308,7 +353,7 @@ public class dashboard extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         sideBarForListPropertyLayout.setVerticalGroup(
             sideBarForListPropertyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,7 +419,7 @@ public class dashboard extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                 .addGap(15, 15, 15))
         );
 
@@ -418,26 +463,30 @@ public class dashboard extends javax.swing.JFrame {
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(dashboardPanelLayout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(283, 283, 283)
+                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 981, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(dashboardPanelLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardPanelLayout.createSequentialGroup()
+                    .addContainerGap(323, Short.MAX_VALUE)
+                    .addComponent(individualDisplayPropertyPlaceholder, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(89, Short.MAX_VALUE)))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
+                .addGap(62, 62, 62)
                 .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox2)
                     .addComponent(jTextField2)
@@ -445,7 +494,12 @@ public class dashboard extends javax.swing.JFrame {
                     .addComponent(jComboBox1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 96, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
+            .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashboardPanelLayout.createSequentialGroup()
+                    .addContainerGap(221, Short.MAX_VALUE)
+                    .addComponent(individualDisplayPropertyPlaceholder, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(78, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("tab3", dashboardPanel);
@@ -578,14 +632,14 @@ public class dashboard extends javax.swing.JFrame {
             .addGroup(managementPropertyTabLayout.createSequentialGroup()
                 .addGap(141, 141, 141)
                 .addComponent(jLabel8)
-                .addContainerGap(1079, Short.MAX_VALUE))
+                .addContainerGap(1080, Short.MAX_VALUE))
         );
         managementPropertyTabLayout.setVerticalGroup(
             managementPropertyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(managementPropertyTabLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel8)
-                .addContainerGap(802, Short.MAX_VALUE))
+                .addContainerGap(797, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab1", managementPropertyTab);
@@ -599,167 +653,47 @@ public class dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    public void displayAllProperties() {
+    public void displayIndividualProperty(JButton viewButton) {
+        
+        File propertyFile = new File("properties.txt");
         
         try {
             
-            File file = new File("properties.txt");
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
             
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
             String line;
-            while((line = reader.readLine()) != null) {
+            while((line = reader.readLine())!=null) {
                 String[] propertyDetails = line.split(",");
                 
-                JPanel newPropertyPanel = new JPanel();
-                
-                JLabel photo = new javax.swing.JLabel();
-                JLabel title = new javax.swing.JLabel();
-                JLabel bed = new javax.swing.JLabel();
-                JLabel bath = new javax.swing.JLabel();
-                JLabel area = new javax.swing.JLabel();
-                JLabel price = new javax.swing.JLabel();
-                JPanel panelHolderLocation = new javax.swing.JPanel();
-                JLabel street = new javax.swing.JLabel();
-                JLabel city = new javax.swing.JLabel();
-                JLabel barangay = new javax.swing.JLabel();
-                JLabel province = new javax.swing.JLabel();
-
-                newPropertyPanel.setBackground(new java.awt.Color(253, 245, 230));
-                newPropertyPanel.setPreferredSize(new java.awt.Dimension(270, 300));
-
-                photo.setText("Image");
-
-                title.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-                title.setText("jLabel2");
-
-                bed.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                bed.setText("jLabel2");
-
-                bath.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                bath.setText("jLabel2");
-
-                area.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                area.setText("jLabel2");
-
-                price.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
-                price.setForeground(new java.awt.Color(30, 11, 146));
-                price.setText("jLabel2");
-
-                panelHolderLocation.setBackground(new java.awt.Color(253, 245, 230));
-                panelHolderLocation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-                street.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                street.setText("jLabel2");
-                panelHolderLocation.add(street, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 33));
-
-                city.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                city.setText("jLabel2");
-                panelHolderLocation.add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 81, 33));
-
-                barangay.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                barangay.setText("jLabel2");
-                panelHolderLocation.add(barangay, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 81, 33));
-
-                province.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                province.setText("jLabel2");
-                panelHolderLocation.add(province, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 81, 33));
-
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(newPropertyPanel);
-                newPropertyPanel.setLayout(layout);
-                layout.setHorizontalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(photo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(bed)
-                                .addGap(58, 58, 58)
-                                .addComponent(bath)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addComponent(panelHolderLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                );
-                layout.setVerticalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelHolderLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bed, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bath, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                );
-                
-                for(int i = 0; i < propertyDetails.length;i++) {
+                if (propertyDetails[0].equals(viewButton.getName())) {
+                    System.out.println("test");
+                    individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],propertyDetails[4],propertyDetails[6]
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17]);
                     
-                    if(i==3) {
-                        title.setText(propertyDetails[i]);
-                    }else if(i==6) {
-                        price.setText(propertyDetails[i]);
-                    }else if(i==7) {
-                        bed.setText(propertyDetails[i]);
-                    }else if(i==8) {
-                        bath.setText(propertyDetails[i]);
-                    }else if(i==9) {
-                        area.setText(propertyDetails[i]);
-                    }else if(i==14) {
-                        province.setText(propertyDetails[i]);
-                    }else if(i==15) {
-                        city.setText(propertyDetails[i]);
-                    }else if(i==16) {
-                        barangay.setText(propertyDetails[i]);
-                    }else if(i==17) {
-                        street.setText(propertyDetails[i]);
-                    }
+                    
+                    individualDisplayPropertyPlaceholder.add(individualDisplay);
+                
+                    individualDisplay.setVisible(true);
+                    individualDisplay.revalidate();
+                    individualDisplay.repaint();
+                    
                     
                 }
                 
-                newPropertyPanel.add(title);
-                newPropertyPanel.add(price);
-                newPropertyPanel.add(bath);
-                newPropertyPanel.add(area);
-                newPropertyPanel.add(bed);
-                newPropertyPanel.add(street);
-                newPropertyPanel.add(barangay);
-                newPropertyPanel.add(province);
-                newPropertyPanel.add(city);
-                newPropertyPanel.add(panelHolderLocation);
-                newPropertyPanel.add(photo);
-                
-                propertiesPanel.add(newPropertyPanel);
-                
-                propertiesPanel.revalidate();
-                propertiesPanel.repaint();
-                
-                
             }
+            reader.close();
             
-            
-
         }catch (IOException ex) {
             ex.printStackTrace();
         }
         
-        
     }
-    
-    
     
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -799,51 +733,51 @@ public class dashboard extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
-        propertiesPanel.removeAll();
-        propertiesPanel.validate();
+//        propertiesPanel.removeAll();
+//        propertiesPanel.validate();
         
         
 
-        File propertyFile = new File("properties.txt");
-        
-        try {
-            
-
-            if(propertyFile.createNewFile()) {
-                System.out.println("File is Created");
-            }else {
-                System.out.println("File Already Existed");
-            }
-
-            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
-
-            String line;
-            while((line = reader.readLine())!=null) {
-                String[] propertyDetails = line.split(",");
-
-                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(
-                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
-                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
-                
-                        
-                propertiesPanel.add(displayAll);
-                
-                
-                displayAll.setVisible(true);
-                displayAll.revalidate();
-                displayAll.repaint();
-                
-                
-              
-            }
-            reader.close();
-            
-            
-            
-            
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        }
+//        File propertyFile = new File("properties.txt");
+//        
+//        try {
+//            
+//
+//            if(propertyFile.createNewFile()) {
+//                System.out.println("File is Created");
+//            }else {
+//                System.out.println("File Already Existed");
+//            }
+//
+//            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+//
+//            String line;
+//            while((line = reader.readLine())!=null) {
+//                String[] propertyDetails = line.split(",");
+//
+//                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
+//                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+//                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
+//                
+//                        
+//                propertiesPanel.add(displayAll);
+//                
+//                
+//                displayAll.setVisible(true);
+//                displayAll.revalidate();
+//                displayAll.repaint();
+//                
+//                
+//              
+//            }
+//            reader.close();
+//            
+//            
+//            
+//            
+//        }catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1027,6 +961,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel dashboardPanel;
     private realestate.GenInformationTab genInformationTab2;
     public javax.swing.JLabel generalInformationLabel;
+    public javax.swing.JPanel individualDisplayPropertyPlaceholder;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
