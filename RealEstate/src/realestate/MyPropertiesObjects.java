@@ -13,6 +13,12 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
     /**
      * Creates new form MyPropertiesObjects
      */
+    public MyPropertiesObjects(String name, String location, String amountClients){
+        houseName.setText(name);
+        locationName.setText(location);
+        clientAmount.setText(amountClients);
+        
+    }
     public MyPropertiesObjects() {
         initComponents();
     }
@@ -32,7 +38,7 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         houseName = new javax.swing.JLabel();
-        location = new javax.swing.JLabel();
+        locationName = new javax.swing.JLabel();
         clientAmount = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -48,8 +54,8 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
         houseName.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
         houseName.setText("jLabel1");
 
-        location.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
-        location.setText("jLabel2");
+        locationName.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
+        locationName.setText("jLabel2");
 
         clientAmount.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
         clientAmount.setText("jLabel3");
@@ -62,7 +68,7 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(houseName)
                 .addGap(137, 137, 137)
-                .addComponent(location)
+                .addComponent(locationName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(clientAmount)
                 .addGap(82, 82, 82)
@@ -75,7 +81,7 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(houseName)
-                    .addComponent(location)
+                    .addComponent(locationName)
                     .addComponent(clientAmount)
                     .addComponent(jToggleButton1))
                 .addContainerGap())
@@ -125,7 +131,7 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JLabel location;
+    private javax.swing.JLabel locationName;
     private javax.swing.JLabel photoIcon;
     // End of variables declaration//GEN-END:variables
 }

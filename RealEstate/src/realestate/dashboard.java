@@ -131,6 +131,8 @@ public class dashboard extends javax.swing.JFrame {
         managementPropertyTab = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
+        clientsTab = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -784,6 +786,37 @@ public class dashboard extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab1", managementPropertyTab);
 
+        jPanel16.setBackground(new java.awt.Color(255, 252, 182));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1327, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 88, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout clientsTabLayout = new javax.swing.GroupLayout(clientsTab);
+        clientsTab.setLayout(clientsTabLayout);
+        clientsTabLayout.setHorizontalGroup(
+            clientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsTabLayout.createSequentialGroup()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
+        );
+        clientsTabLayout.setVerticalGroup(
+            clientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(781, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab4", clientsTab);
+
         mainPanel.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -45, 1330, 910));
 
         getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -1105,7 +1138,7 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_locationTab1MouseEntered
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     
@@ -1224,6 +1257,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel appointmentsIcon;
     private javax.swing.JButton backListProperty;
     private javax.swing.JLabel clientsIcon;
+    private javax.swing.JPanel clientsTab;
     private javax.swing.JLabel dashboardIcon;
     private javax.swing.JPanel dashboardPanel;
     private realestate.GenInformationTab genInformationTab2;
@@ -1248,6 +1282,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
