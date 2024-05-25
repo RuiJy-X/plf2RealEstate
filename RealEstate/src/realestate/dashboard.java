@@ -67,7 +67,7 @@ public class dashboard extends javax.swing.JFrame {
 
                 displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
                     propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
-                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13],this);
                     
                 propertiesPanel.add(displayAll);
                 
@@ -156,8 +156,8 @@ public class dashboard extends javax.swing.JFrame {
         locationTab1 = new realestate.LocationTab();
         keyInformationTab2 = new realestate.KeyInformationTab();
         photosAndMediaTab2 = new realestate.PhotosAndMediaTab();
-        genInformationTab2 = new realestate.GenInformationTab();
         jButton3 = new javax.swing.JButton();
+        genInformationTab2 = new realestate.GenInformationTab();
         managementPropertyTab = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
@@ -543,7 +543,10 @@ public class dashboard extends javax.swing.JFrame {
         dashboardPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         individualPropertyPanel.setLayout(new java.awt.BorderLayout());
-        dashboardPanel.add(individualPropertyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 920, 590));
+
+        individualPropertyPanel.setVisible(false);
+
+        dashboardPanel.add(individualPropertyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 910, 590));
 
         jScrollPane1.setBackground(new java.awt.Color(242, 235, 217));
         jScrollPane1.setForeground(new java.awt.Color(242, 235, 217));
@@ -677,13 +680,6 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        genInformationTab2.setBackground(new java.awt.Color(242, 235, 217));
-        genInformationTab2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                genInformationTab2MouseEntered(evt);
-            }
-        });
-
         jButton3.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 255, 0));
         jButton3.setText("Publish");
@@ -699,22 +695,24 @@ public class dashboard extends javax.swing.JFrame {
         listPropertyPanelHoderLayout.setHorizontalGroup(
             listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(keyInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
-                .addGap(304, 304, 304)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(keyInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         listPropertyPanelHoderLayout.setVerticalGroup(
             listPropertyPanelHoderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(listPropertyPanelHoderLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addComponent(genInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(keyInformationTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(photosAndMediaTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 1384, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -722,7 +720,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(locationTab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jButton3)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(listPropertyPanelHoder);
@@ -1012,19 +1010,23 @@ public class dashboard extends javax.swing.JFrame {
                     
                     individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],
                         propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
-                        ,propertyDetails[16],propertyDetails[17]);
+                        ,propertyDetails[16],propertyDetails[17],this);
+                 
                     
                     individualPanel.add(individualDisplay);
-
+                    individualPropertyPanel.setVisible(true);
                     individualDisplay.setVisible(true);
                     individualDisplay.revalidate();
                     individualDisplay.repaint();
                     System.out.println("test");
                     System.out.println(viewButton.getName());
                     System.out.println(propertyDetails[0]);
+                    System.out.println(propertyDetails[3]);
                     
                     break;
                     
+                }else{
+                    continue;
                 }
                 
                 

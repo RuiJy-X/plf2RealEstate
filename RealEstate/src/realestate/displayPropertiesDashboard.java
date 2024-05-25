@@ -18,9 +18,10 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
      * Creates new form displayPropertiesDashboard
      */
     
-    
-    public displayPropertiesDashboard(String propertyName, String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail) {
+    public dashboard frame;
+    public displayPropertiesDashboard(String propertyName, String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail, dashboard frame) {
         initComponents();
+        this.frame = frame;
         title.setText(titleDetail);
         price.setText(priceDetail);
         bed.setText(bedDetail);
@@ -126,9 +127,9 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
-        dashboard dashboard = new dashboard();
+       
         
-        dashboard.displayIndividualProperty(viewButton, dashboard.individualPropertyPanel);
+        frame.displayIndividualProperty(viewButton, frame.individualPropertyPanel);
 //        dashboard.displayIndividualProperty(viewButton);
     }//GEN-LAST:event_viewButtonActionPerformed
 
