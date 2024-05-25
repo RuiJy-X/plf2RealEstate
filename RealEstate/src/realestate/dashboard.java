@@ -4,6 +4,7 @@
  */
 package realestate;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
@@ -13,6 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -49,7 +51,34 @@ public class dashboard extends javax.swing.JFrame {
 //        ImageIcon scaledIcon = new ImageIcon(imageScaled);
 //        myPropertiesIcon.setIcon(scaledIcon);
         
+        File propertyFile = new File("properties.txt");
         
+        try {
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",");
+
+                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
+                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
+                    
+                propertiesPanel.add(displayAll);
+                
+                displayAll.setVisible(true);
+                displayAll.revalidate();
+                displayAll.repaint();
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
         
     }
     
@@ -111,6 +140,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         dashboardPanel = new javax.swing.JPanel();
+        individualPropertyPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         propertiesPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -510,6 +540,10 @@ public class dashboard extends javax.swing.JFrame {
         jTabbedPane1.setRequestFocusEnabled(false);
 
         dashboardPanel.setBackground(new java.awt.Color(242, 235, 217));
+        dashboardPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        individualPropertyPanel.setLayout(new java.awt.BorderLayout());
+        dashboardPanel.add(individualPropertyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 920, 590));
 
         jScrollPane1.setBackground(new java.awt.Color(242, 235, 217));
         jScrollPane1.setForeground(new java.awt.Color(242, 235, 217));
@@ -523,6 +557,8 @@ public class dashboard extends javax.swing.JFrame {
         flowLayout1.setAlignOnBaseline(true);
         propertiesPanel.setLayout(flowLayout1);
         jScrollPane1.setViewportView(propertiesPanel);
+
+        dashboardPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 149, 976, 630));
 
         jPanel1.setBackground(new java.awt.Color(255, 252, 182));
 
@@ -554,6 +590,8 @@ public class dashboard extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        dashboardPanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1330, -1));
+
         jComboBox1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sell", "Rent" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -561,6 +599,7 @@ public class dashboard extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
+        dashboardPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 116, 126, -1));
 
         jComboBox2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Condominium", "Commercial", "Apartment", "House", "Land" }));
@@ -569,6 +608,7 @@ public class dashboard extends javax.swing.JFrame {
                 jComboBox2ActionPerformed(evt);
             }
         });
+        dashboardPanel.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 116, 167, -1));
 
         jTextField2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
@@ -578,6 +618,7 @@ public class dashboard extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        dashboardPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 116, 252, -1));
 
         jTextField1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
@@ -587,42 +628,7 @@ public class dashboard extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
-        dashboardPanel.setLayout(dashboardPanelLayout);
-        dashboardPanelLayout.setHorizontalGroup(
-            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(dashboardPanelLayout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(dashboardPanelLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        dashboardPanelLayout.setVerticalGroup(
-            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboardPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField1)
-                    .addComponent(jComboBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 96, Short.MAX_VALUE))
-        );
+        dashboardPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 116, 272, -1));
 
         jTabbedPane1.addTab("tab3", dashboardPanel);
 
@@ -986,7 +992,96 @@ public class dashboard extends javax.swing.JFrame {
         
     }
     
+    public void displayIndividualProperty(JButton viewButton, JPanel individualPanel) {
+        
+        File propertyFile = new File("properties.txt");
+        
+        try {
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",");
+                
+                if(propertyDetails[0].equals(viewButton.getName())) {
+                    
+                    individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],
+                        propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
+                        ,propertyDetails[16],propertyDetails[17]);
+                    
+                    individualPanel.add(individualDisplay);
+
+                    individualDisplay.setVisible(true);
+                    individualDisplay.revalidate();
+                    individualDisplay.repaint();
+                    System.out.println("test");
+                    System.out.println(viewButton.getName());
+                    System.out.println(propertyDetails[0]);
+                    
+                    break;
+                    
+                }
+                
+                
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
     
+    
+    public void displayIndividualProperty(JButton viewButton) {
+        
+        
+        File propertyFile = new File("properties.txt");
+        
+        try {
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",");
+                
+                if(propertyDetails[0].equals(viewButton.getName())) {
+                    
+//                    individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],
+//                        propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
+//                        ,propertyDetails[16],propertyDetails[17]);
+                    IndividualPropertyFrame individualDisplay = new IndividualPropertyFrame(propertyDetails[3],
+                        propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
+                        ,propertyDetails[16],propertyDetails[17]);
+                    
+                    individualDisplay.setVisible(true);
+                    individualDisplay.revalidate();
+                    individualDisplay.repaint();
+                    System.out.println("test");
+                    System.out.println(viewButton.getName());
+                    System.out.println(propertyDetails[0]);
+                    
+                    
+                    
+                    break;
+                    
+                }
+                
+                
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
     
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1026,51 +1121,49 @@ public class dashboard extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
-        propertiesPanel.removeAll();
-        propertiesPanel.validate();
-        
-        
-
-        File propertyFile = new File("properties.txt");
-        
-        try {
-            
-
-            if(propertyFile.createNewFile()) {
-                System.out.println("File is Created");
-            }else {
-                System.out.println("File Already Existed");
-            }
-
-            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
-
-            String line;
-            while((line = reader.readLine())!=null) {
-                String[] propertyDetails = line.split(",");
-
-                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(
-                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
-                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
-                
-                        
-                propertiesPanel.add(displayAll);
-                
-                
-                displayAll.setVisible(true);
-                displayAll.revalidate();
-                displayAll.repaint();
-                
-                
-              
-            }
-            reader.close();
-            
-            
-            
-            
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        }
+//        propertiesPanel.removeAll();
+//        propertiesPanel.validate();
+//        
+//        File propertyFile = new File("properties.txt");
+//        
+//        try {
+//            
+//
+//            if(propertyFile.createNewFile()) {
+//                System.out.println("File is Created");
+//            }else {
+//                System.out.println("File Already Existed");
+//            }
+//
+//            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+//
+//            String line;
+//            while((line = reader.readLine())!=null) {
+//                String[] propertyDetails = line.split(",");
+//
+//                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(
+//                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+//                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
+//                
+//                        
+//                propertiesPanel.add(displayAll);
+//                
+//                
+//                displayAll.setVisible(true);
+//                displayAll.revalidate();
+//                displayAll.repaint();
+//                
+//                
+//              
+//            }
+//            reader.close();
+//            
+//            
+//            
+//            
+//        }catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1262,6 +1355,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel dashboardPanel;
     private realestate.GenInformationTab genInformationTab2;
     public javax.swing.JLabel generalInformationLabel;
+    public javax.swing.JPanel individualPropertyPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

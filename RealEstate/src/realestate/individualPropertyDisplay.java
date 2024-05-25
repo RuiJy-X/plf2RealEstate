@@ -48,6 +48,7 @@ public class individualPropertyDisplay extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         description = new javax.swing.JTextArea();
 
+        setBackground(new java.awt.Color(253, 245, 230));
         setPreferredSize(new java.awt.Dimension(890, 580));
 
         image.setText("image");
@@ -56,6 +57,7 @@ public class individualPropertyDisplay extends javax.swing.JPanel {
 
         title.setText("title");
 
+        locationHolder.setBackground(new java.awt.Color(253, 245, 230));
         locationHolder.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         street.setText("street");
@@ -72,6 +74,7 @@ public class individualPropertyDisplay extends javax.swing.JPanel {
 
         price.setText("price");
 
+        description.setBackground(new java.awt.Color(253, 245, 230));
         description.setColumns(20);
         description.setRows(5);
         description.setText("Description");
