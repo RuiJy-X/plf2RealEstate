@@ -4,20 +4,36 @@
  */
 package realestate;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 /**
  *
  * @author User
  */
+<<<<<<< HEAD
 public class GenInformationTab extends javax.swing.JPanel {
     
     public String title;
     public String rentOrSell;
+=======
+public class GenInformationTab extends javax.swing.JPanel implements MouseListener {
+    public String title;
+    public String description;
+    public String propertyType;
+    
+    public boolean isSellOpaque;
+    public boolean isRentOpaque;
+    
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
     /**
      * Creates new form GenInformationTab
      */
     public GenInformationTab() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,13 +55,32 @@ public class GenInformationTab extends javax.swing.JPanel {
         titleField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+<<<<<<< HEAD
         sellButton = new javax.swing.JToggleButton();
         rentButton = new javax.swing.JToggleButton();
+=======
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(804, 864));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 245));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(139, 217, 185), 5, true));
         jPanel1.setPreferredSize(new java.awt.Dimension(804, 864));
 
         jLabel1.setFont(new java.awt.Font("Lato", 1, 25)); // NOI18N
@@ -57,6 +92,32 @@ public class GenInformationTab extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
         jLabel3.setText("Offer Type");
 
+<<<<<<< HEAD
+=======
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel2.addMouseListener(this);
+
+        jLabel7.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 103, 105));
+        jLabel7.setText("Sell");
+        jLabel7.addMouseListener(this);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel7)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        );
+
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
         jLabel4.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
         jLabel4.setText("Property Type");
 
@@ -75,10 +136,40 @@ public class GenInformationTab extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         titleField.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
         titleField.setText("Guiding texts..");
         titleField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 2, true));
         titleField.addActionListener(new java.awt.event.ActionListener() {
+=======
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel11.addMouseListener(this);
+
+        jLabel14.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 103, 105));
+        jLabel14.setText("Rent");
+        jLabel14.addMouseListener(this);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel14)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        );
+
+        jTextField1.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jTextField1.setText("Guiding texts..");
+        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 2, true));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleFieldActionPerformed(evt);
             }
@@ -127,6 +218,7 @@ public class GenInformationTab extends javax.swing.JPanel {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titleField, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
+<<<<<<< HEAD
                         .addGap(0, 81, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,6 +229,9 @@ public class GenInformationTab extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(rentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(95, 95, 95))))
+=======
+                        .addGap(0, 71, Short.MAX_VALUE))))
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,15 +258,178 @@ public class GenInformationTab extends javax.swing.JPanel {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(15, Short.MAX_VALUE))
+=======
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(239, 241, 245));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(139, 217, 185), 5, true));
+        jPanel3.setPreferredSize(new java.awt.Dimension(804, 864));
+
+        jLabel8.setFont(new java.awt.Font("Lato", 1, 25)); // NOI18N
+        jLabel8.setText("What type of property would you like to offer? ");
+
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("Guiding text");
+
+        jLabel10.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
+        jLabel10.setText("Offer Type");
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel2.addMouseListener(this);
+
+        jLabel11.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 103, 105));
+        jLabel11.setText("Sell");
+        jLabel7.addMouseListener(this);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel11)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        );
+
+        jLabel12.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
+        jLabel12.setText("Property Type");
+
+        jLabel13.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
+        jLabel13.setText("Title");
+
+        jLabel15.setFont(new java.awt.Font("Lato", 1, 20)); // NOI18N
+        jLabel15.setText("Description");
+
+        jComboBox2.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Condominium", "Commercial", "Apartment", "House", "Land" }));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(119, 213, 171), 2));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(87, 204, 153), 2, true));
+        jPanel11.addMouseListener(this);
+
+        jLabel16.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 103, 105));
+        jLabel16.setText("Rent");
+        jLabel14.addMouseListener(this);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel16)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+        );
+
+        jTextField2.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jTextField2.setText("Guiding texts..");
+        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 2, true));
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Guiding Texts..");
+        jTextArea2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 2, true));
+        jScrollPane2.setViewportView(jTextArea2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addGap(0, 71, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel13))
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -179,7 +437,13 @@ public class GenInformationTab extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -188,9 +452,10 @@ public class GenInformationTab extends javax.swing.JPanel {
     }//GEN-LAST:event_titleFieldActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        propertyType = (String) jComboBox1.getSelectedItem();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+<<<<<<< HEAD
     private void sellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sellButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sellButtonActionPerformed
@@ -220,21 +485,127 @@ public class GenInformationTab extends javax.swing.JPanel {
             rentOrSell = "null";
         }
         return rentOrSell;
+=======
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    public String getTitle() {
+        title = jTextField1.getText();
+        return title;
+    }
+    
+    public String getDescription() {
+        description = jTextArea1.getText();
+        return description;
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
+=======
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+<<<<<<< HEAD
     private javax.swing.JToggleButton rentButton;
     private javax.swing.JToggleButton sellButton;
     public javax.swing.JTextField titleField;
+=======
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+>>>>>>> c71bb7166d634beb287f1af92ae2c4d89ca3d8cd
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+        if(e.getSource()==jLabel7 || e.getSource()==jPanel2) {
+            jLabel7.setOpaque(true);
+            jLabel7.setBackground(new java.awt.Color(128,128,128));
+            
+            jPanel2.setOpaque(true);
+            jPanel2.setBackground(new java.awt.Color(128,128,128));
+        }
+        if(e.getSource()==jLabel14 || e.getSource()==jPanel11) {
+            jLabel14.setOpaque(true);
+            jLabel14.setBackground(new java.awt.Color(128,128,128));
+            
+            jPanel11.setOpaque(true);
+            jPanel11.setBackground(new java.awt.Color(128,128,128));
+        }
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+        if(e.getSource()==jLabel7 || e.getSource()==jPanel2) {
+            jLabel14.setBackground(new java.awt.Color(255,255,255));
+            jLabel14.setOpaque(false);
+            
+            jPanel11.setBackground(new java.awt.Color(255,255,255));
+            jPanel11.setOpaque(false);
+        }
+        if(e.getSource()==jLabel14 || e.getSource()==jPanel11) {
+            jLabel7.setBackground(new java.awt.Color(255,255,255));
+            jLabel7.setOpaque(false);
+            
+            jPanel2.setBackground(new java.awt.Color(255,255,255));
+            jPanel2.setOpaque(false);
+        }
+        
+        isSellOpaque = jLabel7.isOpaque();
+        isRentOpaque = jLabel14.isOpaque();
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
 }

@@ -9,12 +9,36 @@ package realestate;
  * @author User
  */
 public class LocationTab extends javax.swing.JPanel {
-
+    public String province;
+    public String city;
+    public String barangay;
+    public String street;
+ 
     /**
      * Creates new form LocationTab
      */
     public LocationTab() {
         initComponents();
+    }
+    
+    public String getProvince() {
+        province = jTextField1.getText();
+        return province;
+    }
+    
+    public String getCity() {
+        city = jTextField2.getText();
+        return city;
+    }
+    
+    public String getBarangay(){
+        barangay = jTextField3.getText();
+        return barangay;
+    }
+    
+    public String getStreet() {
+        street = jTextField4.getText();
+        return street;
     }
 
     /**
@@ -39,7 +63,8 @@ public class LocationTab extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 245));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(139, 217, 185), 5, true));
         jPanel1.setPreferredSize(new java.awt.Dimension(804, 864));
 
         jLabel1.setFont(new java.awt.Font("Lato", 1, 25)); // NOI18N
@@ -85,7 +110,7 @@ public class LocationTab extends javax.swing.JPanel {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +133,7 @@ public class LocationTab extends javax.swing.JPanel {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
