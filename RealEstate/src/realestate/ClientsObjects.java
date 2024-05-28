@@ -4,22 +4,36 @@
  */
 package realestate;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author User
  */
-public class MyPropertiesObjects extends javax.swing.JPanel {
+public class ClientsObjects extends javax.swing.JPanel {
 
     /**
      * Creates new form MyPropertiesObjects
      */
-    public MyPropertiesObjects(String name, String location, String amountClients){
+    public dashboard frame;
+    public void icon(String path, JLabel component){
+        ImageIcon imageIcon =  new ImageIcon(path);
+        Image img = imageIcon.getImage();
+        Image imageScaled = img.getScaledInstance(130, 115, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imageScaled);
+        component.setIcon(scaledIcon);
+    }
+    public ClientsObjects(String name, String location, String amountClients, String photo, dashboard frame){
+        this.frame = frame;
         houseName.setText(name);
         locationName.setText(location);
         clientAmount.setText(amountClients);
+        icon(photo,photoIcon);
         
     }
-    public MyPropertiesObjects() {
+    public ClientsObjects() {
         initComponents();
     }
 
@@ -36,20 +50,18 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         photoIcon = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
         houseName = new javax.swing.JLabel();
         locationName = new javax.swing.JLabel();
         clientAmount = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 232, 210));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(new java.awt.BorderLayout());
         jPanel2.add(photoIcon, java.awt.BorderLayout.CENTER);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-
-        jToggleButton1.setText("jToggleButton1");
+        jPanel3.setBackground(new java.awt.Color(255, 232, 210));
 
         houseName.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
         houseName.setText("jLabel1");
@@ -59,6 +71,17 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
 
         clientAmount.setFont(new java.awt.Font("Lato", 0, 20)); // NOI18N
         clientAmount.setText("jLabel3");
+
+        jToggleButton1.setBackground(new java.awt.Color(182, 115, 82));
+        jToggleButton1.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setText("View");
+        jToggleButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -71,8 +94,8 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
                 .addComponent(locationName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addComponent(clientAmount)
-                .addGap(82, 82, 82)
-                .addComponent(jToggleButton1)
+                .addGap(105, 105, 105)
+                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -96,7 +119,7 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,13 +138,17 @@ public class MyPropertiesObjects extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

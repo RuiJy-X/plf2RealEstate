@@ -42,9 +42,9 @@ public class dashboard extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(imageScaled);
         dashboardIcon.setIcon(scaledIcon);
         
-        icon("C:\\plf2RealEstate\\RealEstate\\houseIcon.png", myPropertiesIcon);
-        icon("C:\\plf2RealEstate\\RealEstate\\clientsIcon.png", clientsIcon);
-        icon("C:\\plf2RealEstate\\RealEstate\\locationIcon.png",appointmentsIcon);
+        icon("houseIcon.png", myPropertiesIcon);
+        icon("clientsIcon.png", clientsIcon);
+        icon("appointmentsIcon.png",appointmentsIcon);
 //        ImageIcon imageIcon =  new ImageIcon("C:\\plf2RealEstate\\RealEstate\\houseIcon.png");
 //        Image img = imageIcon.getImage();
 //        Image imageScaled = img.getScaledInstance(myPropertiesIcon.getWidth(), myPropertiesIcon.getHeight(), Image.SCALE_SMOOTH);
@@ -52,6 +52,7 @@ public class dashboard extends javax.swing.JFrame {
 //        myPropertiesIcon.setIcon(scaledIcon);
         
         displayAllProperty();
+        displayMyProperty();
         
     }
     
@@ -113,9 +114,10 @@ public class dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         dashboardPanel = new javax.swing.JPanel();
-        individualPropertyPanel = new javax.swing.JPanel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         propertiesPanel = new javax.swing.JPanel();
+        individualPropertyPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -133,9 +135,25 @@ public class dashboard extends javax.swing.JFrame {
         genInformationTab2 = new realestate.GenInformationTab();
         managementPropertyTab = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        myPropertiesPanel = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
         clientsTab = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        clientsPanel = new javax.swing.JPanel();
+        appointmentsTab = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -515,12 +533,6 @@ public class dashboard extends javax.swing.JFrame {
         dashboardPanel.setBackground(new java.awt.Color(242, 235, 217));
         dashboardPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        individualPropertyPanel.setLayout(new java.awt.BorderLayout());
-
-        individualPropertyPanel.setVisible(false);
-
-        dashboardPanel.add(individualPropertyPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 910, 590));
-
         jScrollPane1.setBackground(new java.awt.Color(242, 235, 217));
         jScrollPane1.setForeground(new java.awt.Color(242, 235, 217));
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -534,7 +546,45 @@ public class dashboard extends javax.swing.JFrame {
         propertiesPanel.setLayout(flowLayout1);
         jScrollPane1.setViewportView(propertiesPanel);
 
-        dashboardPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 149, 976, 630));
+        individualPropertyPanel.setLayout(new java.awt.BorderLayout());
+
+        individualPropertyPanel.setVisible(false);
+
+        jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(individualPropertyPanel, javax.swing.JLayeredPane.POPUP_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(individualPropertyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(individualPropertyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        dashboardPanel.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1010, 740));
 
         jPanel1.setBackground(new java.awt.Color(255, 252, 182));
 
@@ -708,7 +758,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addGap(114, 114, 114))
             .addGroup(listPropertyPanelLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         listPropertyPanelLayout.setVerticalGroup(
             listPropertyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -722,46 +772,76 @@ public class dashboard extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab2", listPropertyPanel);
 
+        managementPropertyTab.setBackground(new java.awt.Color(242, 235, 217));
         managementPropertyTab.setPreferredSize(new java.awt.Dimension(1280, 875));
+        managementPropertyTab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setText("Manage properties");
+        managementPropertyTab.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1303, 102, -1, -1));
 
-        jPanel15.setBackground(new java.awt.Color(255, 252, 182));
+        jPanel17.setBackground(new java.awt.Color(242, 235, 217));
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1327, Short.MAX_VALUE)
+        jLabel1.setFont(new java.awt.Font("Lato", 0, 50)); // NOI18N
+        jLabel1.setText("My Properties");
+
+        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+
+        jScrollPane3.setBackground(new java.awt.Color(242, 235, 217));
+        jScrollPane3.setBorder(null);
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        myPropertiesPanel.setBackground(new java.awt.Color(242, 235, 217));
+        myPropertiesPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEADING, 30, 30));
+        jScrollPane3.setViewportView(myPropertiesPanel);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 88, Short.MAX_VALUE)
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout managementPropertyTabLayout = new javax.swing.GroupLayout(managementPropertyTab);
-        managementPropertyTab.setLayout(managementPropertyTabLayout);
-        managementPropertyTabLayout.setHorizontalGroup(
-            managementPropertyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managementPropertyTabLayout.createSequentialGroup()
-                .addGap(1291, 1291, 1291)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(managementPropertyTabLayout.createSequentialGroup()
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        managementPropertyTab.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 94, 1010, 740));
+
+        jPanel19.setBackground(new java.awt.Color(255, 252, 182));
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        managementPropertyTabLayout.setVerticalGroup(
-            managementPropertyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(managementPropertyTabLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addContainerGap(757, Short.MAX_VALUE))
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        managementPropertyTab.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1290, 90));
 
         jTabbedPane1.addTab("tab1", managementPropertyTab);
+
+        clientsTab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel16.setBackground(new java.awt.Color(255, 252, 182));
 
@@ -769,30 +849,126 @@ public class dashboard extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1327, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 88, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout clientsTabLayout = new javax.swing.GroupLayout(clientsTab);
-        clientsTab.setLayout(clientsTabLayout);
-        clientsTabLayout.setHorizontalGroup(
-            clientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(clientsTabLayout.createSequentialGroup()
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
-        );
-        clientsTabLayout.setVerticalGroup(
-            clientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(clientsTabLayout.createSequentialGroup()
+        clientsTab.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 6, 1310, 90));
+
+        jPanel21.setBackground(new java.awt.Color(242, 235, 217));
+
+        jLabel5.setFont(new java.awt.Font("Lato", 0, 50)); // NOI18N
+        jLabel5.setText("Manage Clients");
+
+        jPanel23.setBackground(new java.awt.Color(242, 235, 217));
+
+        jLabel6.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel6.setText("Property Name");
+
+        jLabel7.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel7.setText("Location");
+
+        jLabel9.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
+        jLabel9.setText("Clients");
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(781, Short.MAX_VALUE))
+                .addComponent(jLabel6)
+                .addGap(93, 93, 93)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(54, 54, 54))
         );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7))
+                    .addComponent(jLabel9))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane4.setBackground(new java.awt.Color(242, 235, 217));
+        jScrollPane4.setBorder(null);
+
+        clientsPanel.setBackground(new java.awt.Color(242, 235, 217));
+        jScrollPane4.setViewportView(clientsPanel);
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 948, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        clientsTab.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1010, 750));
 
         jTabbedPane1.addTab("tab4", clientsTab);
+
+        appointmentsTab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel20.setBackground(new java.awt.Color(255, 252, 182));
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        appointmentsTab.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 100));
+
+        jPanel22.setBackground(new java.awt.Color(242, 235, 217));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        appointmentsTab.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1010, 740));
+
+        jTabbedPane1.addTab("tab4", appointmentsTab);
 
         mainPanel.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -45, 1330, 910));
 
@@ -832,7 +1008,67 @@ public class dashboard extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-   
+    
+    public void displayMyProperty() {
+        File propertyFile = new File("properties.txt");
+        
+        try {
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",,,,,");
+
+                ManagePropertiesObjects displayAll = new ManagePropertiesObjects(propertyDetails[0],
+                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13],this);
+                    
+                myPropertiesPanel.add(displayAll);
+                
+                displayAll.setVisible(true);
+                displayAll.revalidate();
+                displayAll.repaint();
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+//    public void displayClients() {
+//        File propertyFile = new File("properties.txt");
+//        
+//        try {
+//            if(propertyFile.createNewFile()) {
+//                System.out.println("File is Created");
+//            }else {
+//                System.out.println("File Already Existed");
+//            }
+//            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
+//
+//            String line;
+//            while((line = reader.readLine())!=null) {
+//                String[] propertyDetails = line.split(",,,,,");
+//
+//                ClientsOBjects displayAll = new ClientsOBbjects(propertyDetails[]this);
+//                    
+//                propertiesPanel.add(displayAll);
+//                
+//                displayAll.setVisible(true);
+//                displayAll.revalidate();
+//                displayAll.repaint();
+//            }
+//            reader.close();
+//        }catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+//   
     public void displayIndividualProperty(JButton viewButton, JPanel individualPanel) {
         
         File propertyFile = new File("properties.txt");
@@ -853,7 +1089,7 @@ public class dashboard extends javax.swing.JFrame {
                     
                     individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],
                         propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
-                        ,propertyDetails[16],propertyDetails[17],this);
+                        ,propertyDetails[16],propertyDetails[17],this,propertyDetails[12],propertyDetails[13]);
                  
                     
                     individualPanel.add(individualDisplay);
@@ -923,6 +1159,7 @@ public class dashboard extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTabbedPane1.setSelectedIndex(2);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -930,7 +1167,7 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -1102,8 +1339,10 @@ public class dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appointmentsIcon;
+    private javax.swing.JPanel appointmentsTab;
     private javax.swing.JButton backListProperty;
     private javax.swing.JLabel clientsIcon;
+    private javax.swing.JPanel clientsPanel;
     private javax.swing.JPanel clientsTab;
     private javax.swing.JLabel dashboardIcon;
     private javax.swing.JPanel dashboardPanel;
@@ -1119,10 +1358,16 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1131,7 +1376,14 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1141,10 +1393,13 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private realestate.KeyInformationTab keyInformationTab2;
     private javax.swing.JPanel listPropertyPanel;
     private javax.swing.JPanel listPropertyPanelHoder;
@@ -1152,6 +1407,7 @@ public class dashboard extends javax.swing.JFrame {
     public javax.swing.JPanel mainPanel;
     private javax.swing.JPanel managementPropertyTab;
     private javax.swing.JLabel myPropertiesIcon;
+    private javax.swing.JPanel myPropertiesPanel;
     private realestate.PhotosAndMediaTab photosAndMediaTab2;
     private javax.swing.JPanel propertiesPanel;
     private javax.swing.JPanel sideBarForDashboard;
