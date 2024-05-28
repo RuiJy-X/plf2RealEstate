@@ -131,7 +131,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
        
         
-        frame.displayIndividualProperty(viewButton, frame.individualPropertyPanel);
+        frame.displayIndividualProperty(viewButton, frame.individualPropertyPanel, frame.propertyFileNew);
 //        dashboard.displayIndividualProperty(viewButton);
     }//GEN-LAST:event_viewButtonActionPerformed
 

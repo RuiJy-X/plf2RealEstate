@@ -36,22 +36,22 @@ public class dashboard extends javax.swing.JFrame {
     public dashboard() {
         initComponents();
         
-        ImageIcon imageIcon =  new ImageIcon("C:\\plf2RealEstate\\RealEstate\\dashboardIcon.png");
+        ImageIcon imageIcon =  new ImageIcon("dashboardIcon.png");
         Image img = imageIcon.getImage();
         Image imageScaled = img.getScaledInstance(dashboardIcon.getWidth(), dashboardIcon.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imageScaled);
         dashboardIcon.setIcon(scaledIcon);
         
-        icon("C:\\plf2RealEstate\\RealEstate\\houseIcon.png", myPropertiesIcon);
-        icon("C:\\plf2RealEstate\\RealEstate\\clientsIcon.png", clientsIcon);
-        icon("C:\\plf2RealEstate\\RealEstate\\locationIcon.png",appointmentsIcon);
+        icon("houseIcon.png", myPropertiesIcon);
+        icon("clientsIcon.png", clientsIcon);
+        icon("locationIcon.png",appointmentsIcon);
 //        ImageIcon imageIcon =  new ImageIcon("C:\\plf2RealEstate\\RealEstate\\houseIcon.png");
 //        Image img = imageIcon.getImage();
 //        Image imageScaled = img.getScaledInstance(myPropertiesIcon.getWidth(), myPropertiesIcon.getHeight(), Image.SCALE_SMOOTH);
 //        ImageIcon scaledIcon = new ImageIcon(imageScaled);
 //        myPropertiesIcon.setIcon(scaledIcon);
-        
-        displayAllProperty();
+
+        displayAllProperty(propertyFileNew);
         
     }
     
@@ -70,6 +70,10 @@ public class dashboard extends javax.swing.JFrame {
     public String city;
     public String barangay;
     public String street;
+    
+    public String currentlySignin;
+    
+    public File propertyFileNew = new File("properties.txt");
     
     
     /**
@@ -802,8 +806,7 @@ public class dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void displayAllProperty() {
-        File propertyFile = new File("properties.txt");
+    public void displayAllProperty(File propertyFile) {
         
         try {
             if(propertyFile.createNewFile()) {
@@ -832,10 +835,10 @@ public class dashboard extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-   
-    public void displayIndividualProperty(JButton viewButton, JPanel individualPanel) {
-        
-        File propertyFile = new File("properties.txt");
+    
+    
+    
+    public void displayIndividualProperty(JButton viewButton, JPanel individualPanel, File propertyFile) {
         
         try {
             if(propertyFile.createNewFile()) {
@@ -901,10 +904,25 @@ public class dashboard extends javax.swing.JFrame {
         
         
         try {
-            appendNewProperty();
+            
+            String newPropertyName = createRandomFileName();
+            
+            appendToIndividualManageProperties(currentlySignin, newPropertyName);
+            appendNewProperty(newPropertyName);
+            
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        jTabbedPane1.setSelectedIndex(0);
+        jTabbedPane2.setSelectedIndex(0);
+        
+        propertiesPanel.removeAll();
+        propertiesPanel.validate();
+
+        displayAllProperty(propertyFileNew);
+        
+        
        
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -950,6 +968,11 @@ public class dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void backListPropertyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backListPropertyActionPerformed
+        propertiesPanel.removeAll();
+        propertiesPanel.validate();
+
+        displayAllProperty(propertyFileNew);
+        
         jTabbedPane1.setSelectedIndex(0);
         jTabbedPane2.setSelectedIndex(0);
     }//GEN-LAST:event_backListPropertyActionPerformed
@@ -998,8 +1021,74 @@ public class dashboard extends javax.swing.JFrame {
         return fileName;  
     }
     
+    public void appendToIndividualManageProperties(String currentUser, String newPropertyName) throws IOException {
+        
+        File parentFolder = new File("usersIndividualManagementPropertiesFolder");
+        
+        File usersFile = new File(parentFolder,currentUser+"PropertyListing.txt");
+        
+        try {
+            if (usersFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        
+        FileWriter fileWriter = new FileWriter(usersFile,true);
+        
+        fileWriter.write(newPropertyName);
+        fileWriter.write(",,,,,");
+        
+        if(genInformationTab2.isSellOpaque){
+            fileWriter.write("Sell");
+        }
+        if(genInformationTab2.isRentOpaque){
+            fileWriter.write("Rent");
+       }
+        
+        fileWriter.write(",,,,,");fileWriter.write(genInformationTab2.propertyType);
+        
+        fileWriter.write(",,,,,");fileWriter.write(title);
+        
+        fileWriter.write(",,,,,");fileWriter.write(description);
+        
+        fileWriter.write(",,,,,");fileWriter.write(status);
+        
+        fileWriter.write(",,,,,");fileWriter.write(price);
+        
+        fileWriter.write(",,,,,");fileWriter.write(bedrooms);
+        
+        fileWriter.write(",,,,,");fileWriter.write(baths);
+        
+        fileWriter.write(",,,,,");fileWriter.write(area);
+        
+        fileWriter.write(",,,,,");fileWriter.write(block);
+        
+        fileWriter.write(",,,,,");fileWriter.write(subdivisionName);
+        
+        fileWriter.write(",,,,,");fileWriter.write(photo);
+        
+        fileWriter.write(",,,,,");fileWriter.write(media);
+        
+        fileWriter.write(",,,,,");fileWriter.write(province);
+        
+        fileWriter.write(",,,,,");fileWriter.write(city);
+        
+        fileWriter.write(",,,,,");fileWriter.write(barangay);
+        
+        fileWriter.write(",,,,,");fileWriter.write(street);
+        
+        fileWriter.write("\n");
+        
+        fileWriter.close();
+        
+        
+    }
     
-    public void appendNewProperty() throws IOException {
+    public void appendNewProperty(String newPropertyName) throws IOException {
         
         File propertiesFile = new File("properties.txt");
         
@@ -1015,7 +1104,7 @@ public class dashboard extends javax.swing.JFrame {
         
         FileWriter fileWriter = new FileWriter(propertiesFile,true);
         
-        fileWriter.write(createRandomFileName());
+        fileWriter.write(newPropertyName);
         fileWriter.write(",,,,,");
         
         if(genInformationTab2.isSellOpaque){
