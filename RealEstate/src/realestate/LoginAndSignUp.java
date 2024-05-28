@@ -5,7 +5,11 @@
 package realestate;
 
 import java.awt.Image;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 
 /**
@@ -17,6 +21,24 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     /**
      * Creates new form LoginAndSignUp
      */
+    
+    public File allUsersFile = new File("allUsersFile");
+    
+    public String fullName;
+    public String suffix;
+    public String phoneNumber;
+    public String userName;
+    public String email;
+    public char[] passwordArray;
+    public String password = "";
+    public boolean isUsernameAlreadyExisted;
+    
+    public String loginUsername;
+    public char[] loginPassArray;
+    public String loginPassword = "";
+    
+    public boolean isUsernamePasswordMatch;
+    
     public LoginAndSignUp() {
         initComponents();
         File image = new File("C:\\plf2RealEstate\\RealEstate\\landingpageicon.jpg");
@@ -67,30 +89,30 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        fullNameTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        suffixTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        phoneNumberTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        userNameTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
         registerButton = new javax.swing.JButton();
+        passwordTextField = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         LogInPage = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordText = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -223,38 +245,35 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel2.setText("Full Name");
 
-        jTextField1.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        fullNameTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        fullNameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel3.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel3.setText("Suffix");
 
-        jTextField2.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        suffixTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        suffixTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel4.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel4.setText("Phone Number");
 
-        jTextField3.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        phoneNumberTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        phoneNumberTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel5.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jLabel5.setText("Email");
+        jLabel5.setText("Username");
 
-        jTextField4.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        userNameTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        userNameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel6.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jLabel6.setText("Password");
+        jLabel6.setText("Email");
 
-        jTextField5.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        emailTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        emailTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel7.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jLabel7.setText("Confirm Password");
-
-        jTextField6.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        jLabel7.setText("Password");
 
         registerButton.setBackground(new java.awt.Color(0, 0, 0));
         registerButton.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
@@ -266,6 +285,10 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             }
         });
 
+        passwordTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        passwordTextField.setText("jPasswordField1");
+        passwordTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -273,12 +296,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton3)
@@ -289,15 +313,14 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(50, 50, 50)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)))
+                            .addComponent(fullNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passwordTextField))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -311,30 +334,30 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         SignUpPage.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, -1, 720));
@@ -353,8 +376,6 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1195, Short.MAX_VALUE)
         );
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\plf2RealEstate\\RealEstate\\Architectural Design Elements of Modern American Homes _ FH.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -396,13 +417,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Login");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setBackground(new java.awt.Color(0, 0, 0));
+        loginButton.setFont(new java.awt.Font("Lato", 1, 24)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -411,14 +432,14 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel8.setText("Welcome To PickALot!");
 
         jLabel9.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        jLabel9.setText("Email");
+        jLabel9.setText("Username");
 
-        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        usernameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel10.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel10.setText("Password");
 
-        jPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        passwordText.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         jLabel11.setFont(new java.awt.Font("Lato", 0, 18)); // NOI18N
         jLabel11.setText("Don't have an account yet? ");
@@ -453,10 +474,10 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton6))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel10)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                                .addComponent(jPasswordField1)))))
+                                .addComponent(usernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                                .addComponent(passwordText)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(111, Short.MAX_VALUE)
@@ -465,7 +486,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(122, 122, 122))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -478,13 +499,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
-                .addComponent(jButton5)
+                .addComponent(loginButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -523,22 +544,193 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
-        dashboard dashboard = new dashboard();
-        dashboard.setVisible(true);
+        loginUsername = usernameTextField.getText();
+        loginPassArray = passwordText.getPassword();
         
-        dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+        for(char letter : loginPassArray) {
+            loginPassword += letter;
+        }
+        
+        
+        
+        if(loginUsername.isBlank() || loginPassword.isBlank()) {
+            
+            
+        }else {
+            
+            isUsernamePasswordMatch = checksUsernamePasswordMatched(loginUsername,loginPassword,allUsersFile);
+            if(isUsernamePasswordMatch) {
+                dashboard dashboard = new dashboard();
+                dashboard.setVisible(true);
+
+                dispose(); 
+            }else{
+                loginPassword = "";
+            }
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        // TODO add your handling code here:
+
+        fullName = fullNameTextField.getText();
+        suffix = suffixTextField.getText();
+        phoneNumber = phoneNumberTextField.getText();
+        userName = userNameTextField.getText();
+        email = emailTextField.getText();
+        passwordArray = passwordTextField.getPassword();
+        
+        for(char letter : passwordArray) {
+            password += letter;
+        }
+        
+        if(fullName.isBlank() || suffix.isBlank() || phoneNumber.isBlank() || userName.isBlank() || email.isBlank() || password.isBlank()) {
+            
+        }else {
+            try {
+                
+                isUsernameAlreadyExisted = isUserNameAlreadyExisted(userName,allUsersFile);
+                
+                if(isUsernameAlreadyExisted) {
+
+                }else {
+
+                    appendNewUserToFile(allUsersFile);
+                    individualListPropertyFileCreation();
+                    jTabbedPane1.setSelectedIndex(2);
+                    
+                }
+            }catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        
+        
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    public boolean isUserNameAlreadyExisted(String username, File allUsersFile) throws IOException {
+        
+        try {
+            
+            if(allUsersFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            
+            BufferedReader reader = new BufferedReader(new FileReader(allUsersFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] userDetails = line.split(",,,,,");
+                
+                if(userDetails[3].equals(username)) {
+                    isUsernameAlreadyExisted = true;
+                }else {
+                    isUsernameAlreadyExisted = false;
+                }
+                
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        return isUsernameAlreadyExisted;
+    }
+    
+    public boolean checksUsernamePasswordMatched(String username, String password, File allUsersFile) {
+        
+        try {
+            
+            if(allUsersFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            
+            BufferedReader reader = new BufferedReader(new FileReader(allUsersFile));
+
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] userDetails = line.split(",,,,,");
+                
+                System.out.println(userDetails[3]);
+                System.out.println(userDetails[5]);
+                System.out.println(username);
+                System.out.println(password);
+                
+                if(userDetails[3].equals(username) && userDetails[5].equals(password)) {
+                    isUsernamePasswordMatch = true;
+                }else {
+                    isUsernamePasswordMatch = false;
+                }
+                
+            }
+            reader.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        return isUsernamePasswordMatch;
+    }
+    
+    public void appendNewUserToFile(File allUsersFile) throws IOException {
+        
+        try {
+            
+            if(allUsersFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            
+        }
+        
+        FileWriter fileWriter = new FileWriter(allUsersFile,true);
+        
+        fileWriter.write(fullName);fileWriter.write(",,,,,");
+        fileWriter.write(suffix);fileWriter.write(",,,,,");
+        fileWriter.write(phoneNumber);fileWriter.write(",,,,,");
+        fileWriter.write(userName);fileWriter.write(",,,,,");
+        fileWriter.write(email);fileWriter.write(",,,,,");
+        fileWriter.write(password);fileWriter.write("\n");
+        
+        fileWriter.close();
+        
+    }
+    
+    public void individualListPropertyFileCreation() {
+        
+        File usersFile = new File(userName+"PropertyListing.txt");
+        try {
+            
+            if(usersFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
+            }
+            
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -577,12 +769,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LogInPage;
     private javax.swing.JPanel SignUpPage;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JTextField fullNameTextField;
     private javax.swing.JLabel iconLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -608,18 +801,17 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel loadingPage;
     private javax.swing.JLabel loadingPageLabel;
+    private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginIconLabel;
+    private javax.swing.JPasswordField passwordText;
+    private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JTextField phoneNumberTextField;
     private javax.swing.JButton registerButton;
+    private javax.swing.JTextField suffixTextField;
+    private javax.swing.JTextField userNameTextField;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }

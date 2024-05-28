@@ -19,6 +19,7 @@ public class individualPropertyDisplay extends javax.swing.JPanel {
         this.frame = frame;
         title.setText(titleDetail);
         description.setText(descriptionDetail);
+        description.setEditable(false);
         price.setText(priceDetail);
         
         province.setText(provinceDetail);

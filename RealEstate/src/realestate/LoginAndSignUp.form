@@ -302,13 +302,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                                  <Component id="registerButton" min="-2" pref="306" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextField6" max="32767" attributes="0"/>
-                                      <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="emailTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="userNameTextField" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel2" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
@@ -320,20 +322,18 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel3" min="-2" pref="140" max="-2" attributes="0"/>
-                                              <Component id="jTextField2" min="-2" pref="233" max="-2" attributes="0"/>
+                                              <Component id="suffixTextField" min="-2" pref="233" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel4" min="-2" pref="133" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" pref="343" max="32767" attributes="0"/>
+                                              <Component id="phoneNumberTextField" pref="343" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="fullNameTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <Component id="passwordTextField" max="32767" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                  <Component id="registerButton" min="-2" pref="306" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -353,7 +353,7 @@
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="fullNameTextField" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -361,24 +361,24 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="suffixTextField" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="phoneNumberTextField" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField4" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="userNameTextField" min="-2" pref="52" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField5" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Component id="emailTextField" min="-2" pref="54" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jTextField6" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="passwordTextField" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="registerButton" min="-2" pref="46" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="79" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -411,7 +411,7 @@
                     <Property name="text" type="java.lang.String" value="Full Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="fullNameTextField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
@@ -433,7 +433,7 @@
                     <Property name="text" type="java.lang.String" value="Suffix"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="suffixTextField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
@@ -455,7 +455,7 @@
                     <Property name="text" type="java.lang.String" value="Phone Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="phoneNumberTextField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
@@ -474,10 +474,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Email"/>
+                    <Property name="text" type="java.lang.String" value="Username"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="userNameTextField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
@@ -496,10 +496,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Password"/>
+                    <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="emailTextField">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
@@ -518,21 +518,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Confirm Password"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Lato" size="18" style="1"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder roundedCorners="true" thickness="4">
-                          <Color PropertyName="color" blue="b4" green="d9" red="86" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
+                    <Property name="text" type="java.lang.String" value="Password"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="registerButton">
@@ -551,6 +537,21 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerButtonActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JPasswordField" name="passwordTextField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Lato" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder roundedCorners="true" thickness="4">
+                          <Color PropertyName="color" blue="b4" green="d9" red="86" type="rgb"/>
+                        </LineBorder>
+                      </Border>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -618,11 +619,6 @@
                   </Layout>
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel15">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\plf2RealEstate\RealEstate\Architectural Design Elements of Modern American Homes _ FH.jpg"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -671,10 +667,10 @@
                                           <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel9" min="-2" pref="65" max="-2" attributes="0"/>
                                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField7" pref="440" max="32767" attributes="0"/>
-                                          <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="usernameTextField" pref="440" max="32767" attributes="0"/>
+                                          <Component id="passwordText" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel9" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -689,7 +685,7 @@
                                   <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton5" min="-2" pref="289" max="-2" attributes="0"/>
+                                  <Component id="loginButton" min="-2" pref="289" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -706,13 +702,13 @@
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jTextField7" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="usernameTextField" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jPasswordField1" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="passwordText" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                          <Component id="loginButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="116" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -735,7 +731,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="loginButton">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -749,7 +745,7 @@
                     <Property name="text" type="java.lang.String" value="Login"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
@@ -766,10 +762,10 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Lato" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Email"/>
+                    <Property name="text" type="java.lang.String" value="Username"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="usernameTextField">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -788,7 +784,7 @@
                     <Property name="text" type="java.lang.String" value="Password"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+                <Component class="javax.swing.JPasswordField" name="passwordText">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">

@@ -51,34 +51,7 @@ public class dashboard extends javax.swing.JFrame {
 //        ImageIcon scaledIcon = new ImageIcon(imageScaled);
 //        myPropertiesIcon.setIcon(scaledIcon);
         
-        File propertyFile = new File("properties.txt");
-        
-        try {
-            if(propertyFile.createNewFile()) {
-                System.out.println("File is Created");
-            }else {
-                System.out.println("File Already Existed");
-            }
-            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
-
-            String line;
-            while((line = reader.readLine())!=null) {
-                String[] propertyDetails = line.split(",");
-
-                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
-                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
-                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13],this);
-                    
-                propertiesPanel.add(displayAll);
-                
-                displayAll.setVisible(true);
-                displayAll.revalidate();
-                displayAll.repaint();
-            }
-            reader.close();
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        displayAllProperty();
         
     }
     
@@ -98,7 +71,7 @@ public class dashboard extends javax.swing.JFrame {
     public String barangay;
     public String street;
     
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -829,167 +802,37 @@ public class dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public void displayAllProperties() {
+    public void displayAllProperty() {
+        File propertyFile = new File("properties.txt");
         
         try {
-            
-            File file = new File("properties.txt");
-            
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            
-            String line;
-            while((line = reader.readLine()) != null) {
-                String[] propertyDetails = line.split(",");
-                
-                JPanel newPropertyPanel = new JPanel();
-                
-                JLabel photo = new javax.swing.JLabel();
-                JLabel title = new javax.swing.JLabel();
-                JLabel bed = new javax.swing.JLabel();
-                JLabel bath = new javax.swing.JLabel();
-                JLabel area = new javax.swing.JLabel();
-                JLabel price = new javax.swing.JLabel();
-                JPanel panelHolderLocation = new javax.swing.JPanel();
-                JLabel street = new javax.swing.JLabel();
-                JLabel city = new javax.swing.JLabel();
-                JLabel barangay = new javax.swing.JLabel();
-                JLabel province = new javax.swing.JLabel();
-
-                newPropertyPanel.setBackground(new java.awt.Color(253, 245, 230));
-                newPropertyPanel.setPreferredSize(new java.awt.Dimension(270, 300));
-
-                photo.setText("Image");
-
-                title.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-                title.setText("jLabel2");
-
-                bed.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                bed.setText("jLabel2");
-
-                bath.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                bath.setText("jLabel2");
-
-                area.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-                area.setText("jLabel2");
-
-                price.setFont(new java.awt.Font("Berlin Sans FB", 0, 30)); // NOI18N
-                price.setForeground(new java.awt.Color(30, 11, 146));
-                price.setText("jLabel2");
-
-                panelHolderLocation.setBackground(new java.awt.Color(253, 245, 230));
-                panelHolderLocation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-                street.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                street.setText("jLabel2");
-                panelHolderLocation.add(street, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 33));
-
-                city.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                city.setText("jLabel2");
-                panelHolderLocation.add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 81, 33));
-
-                barangay.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                barangay.setText("jLabel2");
-                panelHolderLocation.add(barangay, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 81, 33));
-
-                province.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-                province.setText("jLabel2");
-                panelHolderLocation.add(province, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 81, 33));
-
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(newPropertyPanel);
-                newPropertyPanel.setLayout(layout);
-                layout.setHorizontalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(photo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(bed)
-                                .addGap(58, 58, 58)
-                                .addComponent(bath)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addComponent(panelHolderLocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                );
-                layout.setVerticalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelHolderLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bed, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bath, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(area, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                );
-                
-                for(int i = 0; i < propertyDetails.length;i++) {
-                    
-                    if(i==3) {
-                        title.setText(propertyDetails[i]);
-                    }else if(i==6) {
-                        price.setText(propertyDetails[i]);
-                    }else if(i==7) {
-                        bed.setText(propertyDetails[i]);
-                    }else if(i==8) {
-                        bath.setText(propertyDetails[i]);
-                    }else if(i==9) {
-                        area.setText(propertyDetails[i]);
-                    }else if(i==14) {
-                        province.setText(propertyDetails[i]);
-                    }else if(i==15) {
-                        city.setText(propertyDetails[i]);
-                    }else if(i==16) {
-                        barangay.setText(propertyDetails[i]);
-                    }else if(i==17) {
-                        street.setText(propertyDetails[i]);
-                    }
-                    
-                }
-                
-                newPropertyPanel.add(title);
-                newPropertyPanel.add(price);
-                newPropertyPanel.add(bath);
-                newPropertyPanel.add(area);
-                newPropertyPanel.add(bed);
-                newPropertyPanel.add(street);
-                newPropertyPanel.add(barangay);
-                newPropertyPanel.add(province);
-                newPropertyPanel.add(city);
-                newPropertyPanel.add(panelHolderLocation);
-                newPropertyPanel.add(photo);
-                
-                propertiesPanel.add(newPropertyPanel);
-                
-                propertiesPanel.revalidate();
-                propertiesPanel.repaint();
-                
-                
+            if(propertyFile.createNewFile()) {
+                System.out.println("File is Created");
+            }else {
+                System.out.println("File Already Existed");
             }
-            
-            
+            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
 
+            String line;
+            while((line = reader.readLine())!=null) {
+                String[] propertyDetails = line.split(",,,,,");
+
+                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(propertyDetails[0],
+                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
+                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13],this);
+                    
+                propertiesPanel.add(displayAll);
+                
+                displayAll.setVisible(true);
+                displayAll.revalidate();
+                displayAll.repaint();
+            }
+            reader.close();
         }catch (IOException ex) {
             ex.printStackTrace();
         }
-        
-        
     }
-    
+   
     public void displayIndividualProperty(JButton viewButton, JPanel individualPanel) {
         
         File propertyFile = new File("properties.txt");
@@ -1004,7 +847,7 @@ public class dashboard extends javax.swing.JFrame {
 
             String line;
             while((line = reader.readLine())!=null) {
-                String[] propertyDetails = line.split(",");
+                String[] propertyDetails = line.split(",,,,,");
                 
                 if(propertyDetails[0].equals(viewButton.getName())) {
                     
@@ -1038,53 +881,6 @@ public class dashboard extends javax.swing.JFrame {
     }
     
     
-    public void displayIndividualProperty(JButton viewButton) {
-        
-        
-        File propertyFile = new File("properties.txt");
-        
-        try {
-            if(propertyFile.createNewFile()) {
-                System.out.println("File is Created");
-            }else {
-                System.out.println("File Already Existed");
-            }
-            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
-
-            String line;
-            while((line = reader.readLine())!=null) {
-                String[] propertyDetails = line.split(",");
-                
-                if(propertyDetails[0].equals(viewButton.getName())) {
-                    
-//                    individualPropertyDisplay individualDisplay = new individualPropertyDisplay(propertyDetails[3],
-//                        propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
-//                        ,propertyDetails[16],propertyDetails[17]);
-                    IndividualPropertyFrame individualDisplay = new IndividualPropertyFrame(propertyDetails[3],
-                        propertyDetails[4],propertyDetails[6],propertyDetails[14],propertyDetails[15]
-                        ,propertyDetails[16],propertyDetails[17]);
-                    
-                    individualDisplay.setVisible(true);
-                    individualDisplay.revalidate();
-                    individualDisplay.repaint();
-                    System.out.println("test");
-                    System.out.println(viewButton.getName());
-                    System.out.println(propertyDetails[0]);
-                    
-                    
-                    
-                    break;
-                    
-                }
-                
-                
-            }
-            reader.close();
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         title = genInformationTab2.getTitle();
@@ -1105,7 +901,7 @@ public class dashboard extends javax.swing.JFrame {
         
         
         try {
-            createNewProperty();
+            appendNewProperty();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -1123,50 +919,6 @@ public class dashboard extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
-//        propertiesPanel.removeAll();
-//        propertiesPanel.validate();
-//        
-//        File propertyFile = new File("properties.txt");
-//        
-//        try {
-//            
-//
-//            if(propertyFile.createNewFile()) {
-//                System.out.println("File is Created");
-//            }else {
-//                System.out.println("File Already Existed");
-//            }
-//
-//            BufferedReader reader = new BufferedReader(new FileReader(propertyFile));
-//
-//            String line;
-//            while((line = reader.readLine())!=null) {
-//                String[] propertyDetails = line.split(",");
-//
-//                displayPropertiesDashboard displayAll = new displayPropertiesDashboard(
-//                    propertyDetails[3],propertyDetails[6],propertyDetails[7],propertyDetails[8],propertyDetails[9]
-//                    ,propertyDetails[14],propertyDetails[15],propertyDetails[16],propertyDetails[17],propertyDetails[13]);
-//                
-//                        
-//                propertiesPanel.add(displayAll);
-//                
-//                
-//                displayAll.setVisible(true);
-//                displayAll.revalidate();
-//                displayAll.repaint();
-//                
-//                
-//              
-//            }
-//            reader.close();
-//            
-//            
-//            
-//            
-//        }catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1247,7 +999,7 @@ public class dashboard extends javax.swing.JFrame {
     }
     
     
-    public void createNewProperty() throws IOException {
+    public void appendNewProperty() throws IOException {
         
         File propertiesFile = new File("properties.txt");
         
@@ -1264,7 +1016,7 @@ public class dashboard extends javax.swing.JFrame {
         FileWriter fileWriter = new FileWriter(propertiesFile,true);
         
         fileWriter.write(createRandomFileName());
-        fileWriter.write(",");
+        fileWriter.write(",,,,,");
         
         if(genInformationTab2.isSellOpaque){
             fileWriter.write("Sell");
@@ -1273,37 +1025,37 @@ public class dashboard extends javax.swing.JFrame {
             fileWriter.write("Rent");
        }
         
-        fileWriter.write(",");fileWriter.write(genInformationTab2.propertyType);
+        fileWriter.write(",,,,,");fileWriter.write(genInformationTab2.propertyType);
         
-        fileWriter.write(",");fileWriter.write(title);
+        fileWriter.write(",,,,,");fileWriter.write(title);
         
-        fileWriter.write(",");fileWriter.write(description);
+        fileWriter.write(",,,,,");fileWriter.write(description);
         
-        fileWriter.write(",");fileWriter.write(status);
+        fileWriter.write(",,,,,");fileWriter.write(status);
         
-        fileWriter.write(",");fileWriter.write(price);
+        fileWriter.write(",,,,,");fileWriter.write(price);
         
-        fileWriter.write(",");fileWriter.write(bedrooms);
+        fileWriter.write(",,,,,");fileWriter.write(bedrooms);
         
-        fileWriter.write(",");fileWriter.write(baths);
+        fileWriter.write(",,,,,");fileWriter.write(baths);
         
-        fileWriter.write(",");fileWriter.write(area);
+        fileWriter.write(",,,,,");fileWriter.write(area);
         
-        fileWriter.write(",");fileWriter.write(block);
+        fileWriter.write(",,,,,");fileWriter.write(block);
         
-        fileWriter.write(",");fileWriter.write(subdivisionName);
+        fileWriter.write(",,,,,");fileWriter.write(subdivisionName);
         
-        fileWriter.write(",");fileWriter.write(photo);
+        fileWriter.write(",,,,,");fileWriter.write(photo);
         
-        fileWriter.write(",");fileWriter.write(media);
+        fileWriter.write(",,,,,");fileWriter.write(media);
         
-        fileWriter.write(",");fileWriter.write(province);
+        fileWriter.write(",,,,,");fileWriter.write(province);
         
-        fileWriter.write(",");fileWriter.write(city);
+        fileWriter.write(",,,,,");fileWriter.write(city);
         
-        fileWriter.write(",");fileWriter.write(barangay);
+        fileWriter.write(",,,,,");fileWriter.write(barangay);
         
-        fileWriter.write(",");fileWriter.write(street);
+        fileWriter.write(",,,,,");fileWriter.write(street);
         
         fileWriter.write("\n");
         

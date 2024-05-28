@@ -30,6 +30,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         
         
         viewButton.setName(propertyName);
+        viewButton.setFocusable(false);
         
         ImageIcon imageIcon = new ImageIcon(photoDetail);
         Image img = imageIcon.getImage();
@@ -118,6 +119,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 110));
 
         viewButton.setText("View");
+        viewButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewButtonActionPerformed(evt);
