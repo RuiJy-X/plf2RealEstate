@@ -1,0 +1,1 @@
+property800,,,,,Rent,,,,,Land,,,,,Land for Rent,,,,,Gwapo gwapo ang owner,,,,,Complete,,,,,100000,,,,,0,,,,,0,,,,,10000,,,,,Block 12,,,,,Subdivision Goods,,,,,E:\realEstateApplication\applicationLogo.png,,,,,E:\realEstateApplication\applicationLogoTransparent.png,,,,,Negros Occidental,,,,,Bacolod City,,,,,Barangay 1,,,,,2nd Street

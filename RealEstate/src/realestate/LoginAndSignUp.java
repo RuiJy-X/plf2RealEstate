@@ -41,8 +41,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     
     public LoginAndSignUp() {
         initComponents();
-        File image = new File("C:\\plf2RealEstate\\RealEstate\\landingpageicon.jpg");
-        File loginImage = new File("C:\\plf2RealEstate\\RealEstate\\loginPageIcon.jpg");
+        File image = new File("landingpageicon.jpg");
+        File loginImage = new File("loginPageIcon.jpg");
         String loginImagePath = loginImage.getAbsolutePath();
         String imagePath = image.getAbsolutePath();
         
@@ -91,7 +91,6 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         fullNameTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        suffixTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         phoneNumberTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -101,6 +100,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         registerButton = new javax.swing.JButton();
         passwordTextField = new javax.swing.JPasswordField();
+        suffixDropDownBox = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -251,9 +251,6 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel3.setText("Suffix");
 
-        suffixTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        suffixTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
-
         jLabel4.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         jLabel4.setText("Phone Number");
 
@@ -288,6 +285,15 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         passwordTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
         passwordTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
+        suffixDropDownBox.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        suffixDropDownBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Jr.", "III", "IV", "V" }));
+        suffixDropDownBox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
+        suffixDropDownBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suffixDropDownBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -312,8 +318,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(50, 50, 50)
+                                    .addComponent(suffixDropDownBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(105, 105, 105)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(phoneNumberTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)))
@@ -339,9 +345,9 @@ public class LoginAndSignUp extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(phoneNumberTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(suffixDropDownBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -533,6 +539,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
+        
+        fullNameTextField.setText("");
+        suffixDropDownBox.setSelectedIndex(0);
+        phoneNumberTextField.setText("");
+        userNameTextField.setText("");
+        emailTextField.setText("");
+        passwordTextField.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -562,6 +575,8 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             isUsernamePasswordMatch = checksUsernamePasswordMatched(loginUsername,loginPassword,allUsersFile);
             if(isUsernamePasswordMatch) {
                 dashboard dashboard = new dashboard();
+                dashboard.currentlySignin = loginUsername;
+                
                 dashboard.setVisible(true);
 
                 dispose(); 
@@ -578,7 +593,13 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
 
         fullName = fullNameTextField.getText();
-        suffix = suffixTextField.getText();
+        
+        suffix = (String) suffixDropDownBox.getSelectedItem();
+        
+        if(suffix.equals("None")) {
+            suffix = "  ";
+        }
+        
         phoneNumber = phoneNumberTextField.getText();
         userName = userNameTextField.getText();
         email = emailTextField.getText();
@@ -588,7 +609,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
             password += letter;
         }
         
-        if(fullName.isBlank() || suffix.isBlank() || phoneNumber.isBlank() || userName.isBlank() || email.isBlank() || password.isBlank()) {
+        if(fullName.isBlank() || suffix.isEmpty() || phoneNumber.isBlank() || userName.isBlank() || email.isBlank() || password.isBlank()) {
             
         }else {
             try {
@@ -601,6 +622,14 @@ public class LoginAndSignUp extends javax.swing.JFrame {
 
                     appendNewUserToFile(allUsersFile);
                     individualListPropertyFileCreation();
+                    
+                    fullNameTextField.setText("");
+                    suffixDropDownBox.setSelectedIndex(0);
+                    phoneNumberTextField.setText("");
+                    userNameTextField.setText("");
+                    emailTextField.setText("");
+                    passwordTextField.setText("");
+                    
                     jTabbedPane1.setSelectedIndex(2);
                     
                 }
@@ -616,6 +645,10 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void suffixDropDownBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suffixDropDownBoxActionPerformed
+        
+    }//GEN-LAST:event_suffixDropDownBoxActionPerformed
 
     public boolean isUserNameAlreadyExisted(String username, File allUsersFile) throws IOException {
         
@@ -715,7 +748,9 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     
     public void individualListPropertyFileCreation() {
         
-        File usersFile = new File(userName+"PropertyListing.txt");
+        File parentFolder = new File("usersIndividualManagementPropertiesFolder");
+        
+        File usersFile = new File(parentFolder,userName+"PropertyListing.txt");
         try {
             
             if(usersFile.createNewFile()) {
@@ -809,7 +844,7 @@ public class LoginAndSignUp extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField phoneNumberTextField;
     private javax.swing.JButton registerButton;
-    private javax.swing.JTextField suffixTextField;
+    private javax.swing.JComboBox<String> suffixDropDownBox;
     private javax.swing.JTextField userNameTextField;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
