@@ -283,7 +283,6 @@ public class LoginAndSignUp extends javax.swing.JFrame {
         });
 
         passwordTextField.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        passwordTextField.setText("jPasswordField1");
         passwordTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(134, 217, 180), 4, true));
 
         suffixDropDownBox.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N

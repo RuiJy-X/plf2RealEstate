@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  *
  * @author jcost
  */
-public class displayPropertiesDashboard extends javax.swing.JPanel {
+public class ManagePropertiesObjects extends javax.swing.JPanel {
 
     /**
      * Creates new form displayPropertiesDashboard
@@ -33,7 +33,7 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     }
     
     
-    public displayPropertiesDashboard(String propertyName, String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail, dashboard frame) {
+    public ManagePropertiesObjects(String propertyName, String titleDetail, String priceDetail, String bedDetail, String bathDetail, String areaDetail, String provinceDetail, String cityDetail, String barangayDetail, String streetDetail, String photoDetail, dashboard frame) {
         initComponents();
         this.frame = frame;
         title.setText(titleDetail);
@@ -43,8 +43,11 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         area.setText(areaDetail);
         
         
-        viewButton.setName(propertyName);
-        viewButton.setFocusable(false);
+        editButton.setName(propertyName);
+        editButton.setFocusable(false);
+        
+        deleteButton.setName(propertyName);
+        deleteButton.setFocusable(false);
         
         ImageIcon imageIcon = new ImageIcon(photoDetail);
         Image img = imageIcon.getImage();
@@ -79,7 +82,6 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         province = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         photo = new javax.swing.JLabel();
-        viewButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -95,8 +97,11 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         price = new javax.swing.JLabel();
+        editButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(253, 245, 230));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 170), 3));
         setPreferredSize(new java.awt.Dimension(270, 430));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,16 +134,6 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         jPanel2.add(photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 170));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 170));
-
-        viewButton.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
-        viewButton.setText("View");
-        viewButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        viewButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewButtonActionPerformed(evt);
-            }
-        });
-        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 80, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -203,14 +198,26 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
         jPanel4.add(price);
 
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 240, 50));
+
+        editButton.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        editButton.setText("Edit");
+        editButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 170, 170), 3, true));
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+        add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 60, 30));
+
+        deleteButton.setFont(new java.awt.Font("Lato", 1, 18)); // NOI18N
+        deleteButton.setText("Delete");
+        deleteButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 170, 170), 3, true));
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 80, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
-       
-        
-        frame.displayIndividualProperty(viewButton, frame.individualPropertyPanel, frame.propertyFileNew);
-//        dashboard.displayIndividualProperty(viewButton);
-    }//GEN-LAST:event_viewButtonActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -219,6 +226,8 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     private javax.swing.JLabel bath;
     private javax.swing.JLabel bed;
     private javax.swing.JLabel city;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -237,6 +246,5 @@ public class displayPropertiesDashboard extends javax.swing.JPanel {
     private javax.swing.JLabel province;
     private javax.swing.JLabel street;
     private javax.swing.JLabel title;
-    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }
